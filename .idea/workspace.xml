@@ -5,44 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8917be49-40a0-400b-a3e8-b8b0def16747" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Detayli_Arama_Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Hasta_Kayit_Page_B.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Hasta_Kayit_Page_E.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Hasta_Kayit_Page_F.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Hasta_Kayit_Page_M.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Hasta_Kayit_Page_İ.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Login_Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Muayene_Kayit_Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/runner/Runner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/DetaylıHastaArama_StepDefinitions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/HastaKayit_StepDefinitions_B.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/HastaKayit_StepDefinitions_E.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/HastaKayit_StepDefinitions_F.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/HastaKayit_StepDefinitions_M.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/HastaKayit_StepDefinitions_İ.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/Hooks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/Login_StepDefinitions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/MuayeneKayit_StepDefinitions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utilities/ConfigReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utilities/Driver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utilities/ReusableMethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/cucumber.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/DetayliHastaArama.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/HastaKayit_B.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/HastaKayit_E.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/HastaKayit_F.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/HastaKayit_M.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/HastaKayit_İ.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Login.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/MuayeneKayit.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/pdf-config1.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/Hasta_Kayit_Page_B.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/Hasta_Kayit_Page_B.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepdefinitions/HastaKayit_StepDefinitions_B.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/HastaKayit_StepDefinitions_B.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/HastaKayit_B.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/HastaKayit_B.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +15,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Brsh" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -61,14 +44,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/Probel_Abeyis_project/src/test/resources"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/Probel_Abeyis_project/src/test/resources&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\Probel_Abeyis_project\src\test\resources" />

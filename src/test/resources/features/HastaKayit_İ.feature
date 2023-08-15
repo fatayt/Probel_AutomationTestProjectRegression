@@ -294,3 +294,6 @@ Feature: probel_hastaKayit
     And user clicks on the save button
     And user assert the registration
     Then user closes the application
+
+
+ #   ......

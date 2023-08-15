@@ -16,11 +16,19 @@ public class Hasta_Kayit_Page_B {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    //  @FindBy(xpath = "(//input[@class='inpt wpx50'])[3]")
+  @FindBy(xpath="//span[@class='info item']")
+  public WebElement bilgiButton;
+
+    @FindBy(xpath="//a[@title='Kapat']")
+    public WebElement kapatButton;
+
+
+
+
     @FindBy(id = "TXT_HASTA_KAYIT_ANA_KURUM_KODU")
     public WebElement kurum;
 
-    // @FindBy(xpath = "(//input[@class='inpt wpx50'])[4]")
+
     @FindBy(id = "TXT_HASTA_KAYIT_ALT_KURUM_KODU")
     public WebElement kurumDetay;
 
@@ -144,42 +152,42 @@ public class Hasta_Kayit_Page_B {
 
     //--------------------------------------------------------- Baris
 
-    //@FindBy(xpath = "(//select[@class='inpt '])[1]")
+
     @FindBy(id= "CMB_HASTA_KAYIT_UYRUK")
     public  WebElement uyruguDropdown;
 
     @FindBy(xpath = "(//select[@class='inpt '])[2]")
     public  WebElement basvuruSekliDropdown;
 
-    // @FindBy(xpath = "(//input[@class='inpt '])[13]")
+
     @FindBy(id = "TXT_HASTA_KAYIT_BABA_ADI")
     public  WebElement babaAdiSearchBox;
 
-    // @FindBy(xpath = "(//input[@class='inpt '])[14]")
+
     @FindBy(id = "(TXT_HASTA_KAYIT_ANA_ADI")
     public  WebElement anaAdiSearchBox;
 
-    // @FindBy(xpath = "(//input[@class='inpt '])[15]")
+
     @FindBy(id = "TXT_HASTA_KAYIT_DOGUM_YERI")
     public  WebElement dogumYeriSearchBox;
 
-    //@FindBy(id = "TXT_HASTA_KAYIT_ANNE_TC_KIMLIK_NO")
+
     @FindBy(id = "TXT_HASTA_KAYIT_ANNE_TC_KIMLIK_NO")
     public  WebElement anneTCNoSearchBox;
 
-    // @FindBy(xpath = "(//a[@class='hastaButton backWhite'])[5]")
+
     @FindBy(xpath = "(//a[contains(text(),'Doğrula-F1')])[1]")
     public  WebElement dogrulaF1Button;
 
-    // @FindBy(xpath = "//input[@id='TXT_HASTA_KAYIT_ANNE_DOGUM_TARIHI']")
+
     @FindBy(id = "TXT_HASTA_KAYIT_ANNE_DOGUM_TARIHI")
     public WebElement anneDogumTarihiSearchBox;
 
-    //@FindBy(xpath = "(//a[@class='hem_border hem_button hem_sil hem_left lookupClearButton backWhite'])")
+
     @FindBy(xpath = "(//a[@title='Değerleri temizle'])[1])")
     public  WebElement hastaTuruSilmeButton;
 
-    // @FindBy(xpath = "(//input[@class='inpt  lookupOpenButton'])[3]")
+
     @FindBy(xpath = "(//input[contains(@value,'...')])[3]")
     public WebElement hastaTuruButton;
 

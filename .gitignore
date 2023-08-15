@@ -39,3 +39,5 @@ build/
 .DS_Store
 
 /test-output/
+configuration.properties
+src/test/java/runner/Runner.java

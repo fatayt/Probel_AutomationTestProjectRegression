@@ -31,10 +31,13 @@ public class HastaKayit_StepDefinitions_E {
         basePage.hastaButton.click();
     }
     @When("Enter Kurum, Kurum detay")
-    public void enter_kurum_kurum_detay() {
+    public void enter_kurum_kurum_detay() throws InterruptedException {
 
         hasta_kayit_page.kurum.sendKeys(ConfigReader.getProperty("kurum"));
+        Thread.sleep(1000);
+
         hasta_kayit_page.kurumDetay.sendKeys(ConfigReader.getProperty("kurum_Detay"));
+        Thread.sleep(1000);
     }
 
     //test1---------------

@@ -23,6 +23,37 @@ public class Hasta_Kayit_Page_E {
     @FindBy(xpath = "(//p)[1]")
     public WebElement HataMassage;
 
+    @FindBy ( xpath = "(//a[@class='LookupSelectButton text_btn text_btn_ok backWhite'])[7]")
+    public WebElement saglikTurizimiButton;
+
+    @FindBy (xpath = "//input[@id='TXT_HASTA_KAYIT_BEBEK_DOGUM_HAFTA']")
+    public WebElement bebeginDogumHaftasiSearchBox;
+
+    @FindBy (xpath = "//input[@id='TXT_HASTA_KAYIT_BEBEK_DOGUM_HAFTA_GUN']")
+    public WebElement bebeginDogumGunuSearchBox;
+
+    @FindBy (xpath = "(//p)")
+    public WebElement islemBasariliMassage;
+
+    @FindBy(id = "TXT_HASTA_KAYIT_TAHSIS_NO")
+    public WebElement tahsisNoSearchBox;
+
+    @FindBy(id = "TXT_HASTA_KAYIT_KARNE_SERI")
+    public WebElement karneSeriNoSearchBox1;
+
+    @FindBy(id = "TXT_HASTA_KAYIT_KARNE_NO")
+    public WebElement karneSeriNoSearchBox2;
+
+    @FindBy(xpath = "(//a[@class='LookupSelectButton text_btn text_btn_ok backWhite'])[5]")
+    public WebElement kimliksizHastaButton;
+
+    @FindBy(xpath = "(//P)")
+    public WebElement massage;
+
+    @FindBy(xpath = "//input[@id='TC_KIMLIK_NO']")
+    public WebElement TccSearchBox;
+
+
     //----------------------------- Merve
     @FindBy(id="CHK_HASTA_KAYIT_YENIDOGAN")
     public WebElement yenidoganCheckBox;
@@ -145,6 +176,39 @@ public class Hasta_Kayit_Page_E {
     @FindBy(xpath = "//textarea[@class='inpt wpx355']")
     public WebElement aciklamaSearchBox;
 
+    @FindBy(xpath = "(//input[@class='dxeEditArea_MetropolisBlue dxeEditAreaSys'])[1]")
+    public WebElement ilKoduSearchBox;
+
+    @FindBy(className = "//td[@class='IL_ADI dxgv dx-ellipsis']")
+    public WebElement mardinIlSecButton;
+
+    @FindBy(className = "dxp-lead dxp-summary")
+    public WebElement ogeSayisi;
+
+    @FindBy(xpath = "//a[@class='PopupCloseButton PopupButton']")
+    public WebElement KapatButton;
+
+    @FindBy (xpath = "//input[@class='inpt tacnt wpx50']")
+    public WebElement poliklinkSearchBox;
+
+    @FindBy(xpath = "(//td[@class='POLIKLINIK_ADI dxgv dx-ellipsis'])[6]")
+    public WebElement acilPoliklinkButton;
+
+    @FindBy ( id = "GELIS_SEKLI_KODU")
+    public WebElement gelisNedeni;
+
+    @FindBy(className = " hem_button hem_kaydet cmd_MuayeneKayit")
+    public WebElement kaydetButtoon;
+
+    @FindBy(xpath = "(//p)")
+    public WebElement massageVerfy;
+
+    @FindBy(xpath = "(//a[@class='LookupSelectButton text_btn text_btn_ok backWhite'])[8]")
+    public WebElement hastaTurur3;
+
+    @FindBy(xpath = "//span[@class='info item']")
+    public WebElement popupKapatButton;
+
  //--------------------------------------------------------- Baris
 
     @FindBy(xpath = "(//select[@class='inpt '])[1]")
@@ -153,13 +217,13 @@ public class Hasta_Kayit_Page_E {
     @FindBy(xpath = "(//select[@class='inpt '])[2]")
     public  WebElement basvuruSekliDropdown;
 
-    @FindBy(xpath = "(//input[@class='inpt '])[13]")
+    @FindBy(xpath = "(//input[@id='TXT_HASTA_KAYIT_BABA_ADI'])")
     public  WebElement babaAdiSearchBox;
 
-    @FindBy(xpath = "(//input[@class='inpt '])[14]")
+    @FindBy(xpath = "(//input[@class='inpt '])[13]")
     public  WebElement anaAdiSearchBox;
 
-    @FindBy(xpath = "(//input[@class='inpt '])[15]")
+    @FindBy(xpath = "(//input[@class='inpt '])[14]")
     public  WebElement dogumYeriSearchBox;
 
     @FindBy(id = "TXT_HASTA_KAYIT_ANNE_TC_KIMLIK_NO")

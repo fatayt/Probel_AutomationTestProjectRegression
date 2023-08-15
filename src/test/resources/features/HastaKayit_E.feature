@@ -1,4 +1,4 @@
-@probel_hastaKayit
+@probel_hastaKayitt
 Feature: probel_hastaKayit
 
   Background:
@@ -7,17 +7,17 @@ Feature: probel_hastaKayit
     And Click the Hasta button
     And Enter Kurum, Kurum detay
 
-  @e_test1
+  @e_test11
   Scenario: TC001 - "Tc" Kimlik no" error message verification
     Then click the Kaydet-F10- button
     And verify -Hasta Karti Düzenleme - T.C kimlik numarasi bos olamaz ...PROBEL!- message
 
-  @e_test2
+  @e_test22
   Scenario: TC002 - "Passport no" and "Passport id" verification on the registration page
     Then select nationality uyruk -ABD (Amerika Birleşik D.)-
     And Verify that -Pasaport ıd- and -pasaport no- are in the page
 
-  @e_test3
+  @e_test33
   Scenario: TC003 - Entering a future date of the newborn baby's baby birth week
     Then make patient type -SAĞLIK TURİZMİ-
     And Enter -TC no- -Adi -soyadi- -doğum tarihi- -cinsiyet- -ana adi- -baba adi- -doğum yeri- -anne tc no-

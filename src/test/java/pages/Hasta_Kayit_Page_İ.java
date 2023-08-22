@@ -6,9 +6,6 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class Hasta_Kayit_Page_İ {
-
-
-
     public Hasta_Kayit_Page_İ(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -167,19 +164,10 @@ public class Hasta_Kayit_Page_İ {
     @FindBy(xpath = "//*[@id=\"basariliIcerik\"]/div/div[1]/p")
     public WebElement popupBilgilerKaydedildiMesaji;
 
-    @FindBy(xpath = "//*[@id=\"basariliIcerik\"]/div/div[3]/span")
+    @FindBy(xpath = "/html/body/div[1]/div/div/div[3]/span")
     public WebElement popupBilgilerKaydedildiTAMAMbutton;
 
-    @FindBy(xpath = "//*[@id=\"hataIcerik\"]/div/div[1]/p")
-    public WebElement Okumaişlemineyetkinizbulunmuyor;
 
-
-    @FindBy(xpath = "//*[@id=\"hataIcerik\"]/div/div[3]/span")
-    public WebElement hamePageDikkatKAPATMbutton;
-
-
-
-//....
 
     //----------------------------------------------------- Fatih
 
@@ -248,12 +236,4 @@ public class Hasta_Kayit_Page_İ {
 
     @FindBy(xpath = "(//input[@class='inpt  lookupOpenButton'])[3]")
     public  WebElement hastaTuruButton;
-
-
-
-
-
-
-
-
 }

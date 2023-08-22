@@ -36,14 +36,11 @@ Feature: probel_hastaKayit
     And user assert the registration
     And user clicks the papup close button
     And user clicks the patient registration KAPAT button
-
-
     And user selects an poliklinik
     And user selects the mode of arrival
     And user click kaydet
     And user verifies the message "Bilgiler kaydedildi."
     And  user breaks down the popup to the TAMAM button
-
     Then user closes the application
 
 
@@ -103,7 +100,7 @@ Feature: probel_hastaKayit
   @TC0006
   Scenario: TC0006 - User can write their private names such as Mother Name, Father Name, Place of Birth in lower case
 
-    And user selects the Uyruk
+    When user selects the Uyruk
     And user click hasta Turu
     And user click tika tarafindan getirilen hastalar
     And user writes the name of the mother
@@ -123,7 +120,7 @@ Feature: probel_hastaKayit
     And user click kaydet
     And user verifies the message "Bilgiler kaydedildi."
     And  user breaks down the popup to the TAMAM button
-  #  Then user closes the application
+    Then user closes the application
 
 
 
@@ -182,7 +179,12 @@ Feature: probel_hastaKayit
     And user clicks the papup close button
     And user clicks the patient registration KAPAT button
     And user assert the registration
-   # Then user closes the application
+    And user selects an poliklinik
+    And user selects the mode of arrival
+    And user click kaydet
+    And user verifies the message "Bilgiler kaydedildi."
+    And  user breaks down the popup to the TAMAM button
+    Then user closes the application
 
 
 
@@ -213,7 +215,14 @@ Feature: probel_hastaKayit
     And user click kimlik fotokopisi alindi button
     And user click KVKK button
     And user clicks on the save button
+    And user clicks the papup close button
+    And user clicks the patient registration KAPAT button
     And user assert the registration
+    And user selects an poliklinik
+    And user selects the mode of arrival
+    And user click kaydet
+    And user verifies the message "Bilgiler kaydedildi."
+    And  user breaks down the popup to the TAMAM button
     Then user closes the application
 
 
@@ -244,8 +253,17 @@ Feature: probel_hastaKayit
     And user click kimlik fotokopisi alindi button
     And user click KVKK button
     And user clicks on the save button
+    And user clicks the papup close button
+    And user clicks the patient registration KAPAT button
     And user assert the registration
+    And user selects an poliklinik
+    And user selects the mode of arrival
+    And user click kaydet
+    And user verifies the message "Bilgiler kaydedildi."
+    And  user breaks down the popup to the TAMAM button
     Then user closes the application
+
+
 
   @TC0048
   Scenario:TC0048 - User registers with phone number in correct format
@@ -274,7 +292,15 @@ Feature: probel_hastaKayit
     And user click kimlik fotokopisi alindi button
     And user click KVKK button
     And user clicks on the save button
+
+    And user clicks the papup close button
+    And user clicks the patient registration KAPAT button
     And user assert the registration
+    And user selects an poliklinik
+    And user selects the mode of arrival
+    And user click kaydet
+    And user verifies the message "Bilgiler kaydedildi."
+    And  user breaks down the popup to the TAMAM button
     Then user closes the application
 
   @TC0049
@@ -292,8 +318,41 @@ Feature: probel_hastaKayit
     And user writes Passport No
     And user enters the mobile phone
     And user clicks on the save button
+    And user clicks the papup close button
+    And user clicks the patient registration KAPAT button
     And user assert the registration
+    And user selects an poliklinik
+    And user selects the mode of arrival
+    And user click kaydet
+    And user verifies the message "Bilgiler kaydedildi."
+    And  user breaks down the popup to the TAMAM button
     Then user closes the application
 
 
- #   ......
+  @TC0050
+  Scenario:TC0050 - User registers with baba adı, anne adı and dogum yeri in the appropriate format
+    And user selects the Uyruk AZERBEYCAN
+    And user click hasta Turu
+    And user click Turk Soylu Yabancilar
+    And user selects the date of birth
+    And user enters the baba adi wrong format
+    And enter the user anne adi wrong format
+    And enter the user dogum yeri wrong format
+    And user enters the surname
+    And enter the user name
+    And user selects the proximity
+    And user selects a gender
+    And user chooses a marital status
+    And user writes Passport Id
+    And user writes Passport No
+    And user enters the mobile phone
+    And user clicks on the save button
+    And user clicks the papup close button
+    And user clicks the patient registration KAPAT button
+    And user assert the registration
+    And user selects an poliklinik
+    And user selects the mode of arrival
+    And user click kaydet
+    And user verifies the message "Bilgiler kaydedildi."
+    And  user breaks down the popup to the TAMAM button
+    Then user closes the application

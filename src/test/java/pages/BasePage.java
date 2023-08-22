@@ -10,7 +10,7 @@ public class BasePage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath ="//a[@class='open']" )
+    @FindBy(xpath ="(//a[@class='open'])[1]" )
     public WebElement hastaIslemleri;
 
     @FindBy(xpath ="(//a[@class='open'])[2]" )
@@ -19,7 +19,7 @@ public class BasePage {
     @FindBy(xpath ="(//a[@href='/HBYS_WEB_PRODUCT/POL/POL/POLIKLINIKMUAYENE'])" )
     public WebElement poliklinikMuayneKayit;
 
-    @FindBy(xpath ="//a[@style='padding-left:25px;']" )
+    @FindBy(xpath ="/html[1]/body[1]/div[1]/div[4]/section[1]/form[1]/div[3]/div[1]/div[1]/div[1]/div[4]/a[2]" )
     public WebElement hastaButton;
 
 

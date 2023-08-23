@@ -6,7 +6,6 @@ import io.cucumber.java.en.When;
 import pages.BasePage;
 import pages.Muayene_Kayit_Page;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 public class MuayeneKayit_StepDefinitions {
 

@@ -4,16 +4,11 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
-import pages.Hasta_Kayit_Page_B;
 import pages.Muayene_Kayit_Page;
 import pages.Muayene_Kayit_Page_B;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 public class MuayeneKayit_StepDefinitions_B {
     BasePage basePage = new BasePage();

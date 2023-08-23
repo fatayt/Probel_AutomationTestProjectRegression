@@ -64,11 +64,6 @@
             <scope>test</scope>
         </dependency>
 
-<dependency>
-    <groupId>net.masterthought.jenkins</groupId>
-    <artifactId>cucumber-reports</artifactId>
-    <version>5.7.6</version>
-</dependency>
 
         <dependency>
             <groupId>junit</groupId>

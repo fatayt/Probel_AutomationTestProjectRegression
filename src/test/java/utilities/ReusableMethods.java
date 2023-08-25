@@ -105,11 +105,6 @@ public class ReusableMethods {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static WebElement waitForClickablility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(3));
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
-    }
-
 
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
@@ -272,7 +267,7 @@ public class ReusableMethods {
     public static String generateValidId() {
 
         Faker faker = new Faker();
-        String validId = faker.number().randomDigitNotZero() + faker.number().digits(8);
+        String validId = faker.number().numberBetween(1,8) + faker.number().digits(8);
         int a10 = ((validId.charAt(0) - '0' + validId.charAt(2) - '0' + validId.charAt(4) - '0' + validId.charAt(6) - '0' + validId.charAt(8) - '0') * 7 -
                 (validId.charAt(1) - '0' + validId.charAt(3) - '0' + validId.charAt(5) - '0' + validId.charAt(7) - '0')) % 10;
         int a11 = (validId.charAt(0) - '0' + validId.charAt(1) - '0' + validId.charAt(2) - '0' + validId.charAt(3) - '0' + validId.charAt(4) - '0' + validId.charAt(5) - '0' +

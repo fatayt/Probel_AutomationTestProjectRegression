@@ -4,14 +4,61 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.BasePage;
-import pages.Muayene_Kayit_Page;
+import pages.MuayeneKayit_Page;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class MuayeneKayit_StepDefinitions {
 
-    Muayene_Kayit_Page mkp = new Muayene_Kayit_Page(Driver.getDriver());
+    MuayeneKayit_Page mkp = new MuayeneKayit_Page(Driver.getDriver());
     BasePage bp = new BasePage();
 
+
+
+
+
+    @And("Select Acil Erişkin Müşahade on Poliklinik on Muayene Kayıt Page")
+    public void selectAcilEriskinMusahadeOnPoliklinikOnMuayeneKayıtPage() {
+        mkp.emergencyAdult();
+    }
+
+    @Then("Bilgiler Kaydedildi shouldnt be seen on Popup Alert on Muayene Kayıt Page")
+    public void bilgilerKaydedildiShouldntBeSeenOnPopupAlertOnMuayeneKayıtPage() {
+        mkp.failAlert();
+    }
+
+
+    @When("Select  Poliklinik as KADIN DOĞUM on Muayene Kayıt Page")
+    public void selectPoliklinikAsKADINDOGUMOnMuayeneKayıtPage() {
+        mkp.selectPoliklinikAsKadinDogum();
+    }
+
+
+    @Then("An alert should be seen on Muayene Kayıt Page")
+    public void anAlertShouldBeSeenOnMuayeneKayıtPage() {
+        mkp.alertSeen();
+    }
+
+
+    @And("Bilgiler Kaydedildi alert should be seen on Popup Alert on Muayene Kayıt Page")
+    public void bilgilerKaydedildiAlertShouldBeSeenOnPopupAlertOnMuayeneKayıtPage() throws InterruptedException {
+        mkp.succesAlert();
+    }
+
+    @And("Select a valid Poliklinik  from on Muayene Kayıt Page")
+    public void selectAValidPoliklinikFromOnMuayeneKayıtPage() {
+        mkp.selectValidPoliklinik();
+    }
+
+    @And("Click Kaydet button from on Muayene Kayıt Page")
+    public void clickKaydetButtonFromOnMuayeneKayıtPage() {
+        mkp.clickSaveButton();
+    }
+
+    @And("Select a valid Geliş Şekli  from on Muayene Kayıt Page")
+    public void selectAValidGelisSekliFromOnMuayeneKayıtPage() {
+        mkp.selectAValidArrivalType();
+    }
 
 
     @When("insert the TC Identity Number in TC ID box")
@@ -120,6 +167,7 @@ public class MuayeneKayit_StepDefinitions {
 
     @When("click on Reports button")
     public void clickOnReportsButton() {
+        ReusableMethods.waitFor(2);
         mkp.clickOnReportsButton();
     }
 
@@ -915,7 +963,12 @@ public class MuayeneKayit_StepDefinitions {
         mkp.assertTheServiceRecordIsDeleted();
     }
 
-   //@When("The user can click hasta button")
+    @And("continue if")
+    public void continueIf() {
+        mkp.continueIf();
+    }
+
+    //@When("The user can click hasta button")
    //public void theUserCanClickHastaButton() {
    //    // bp.hastaButton.click();
    //    bp.theUserCanClickHastaButton();

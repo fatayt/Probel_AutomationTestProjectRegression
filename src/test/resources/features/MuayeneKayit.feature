@@ -1,5 +1,7 @@
 @ServiceExaminationRegistration
-@MuayeneKayit
+@ServiceRegistration
+  @Deneme
+
 Feature: The Home Page of Patient Register
 
   Background:
@@ -77,19 +79,21 @@ Feature: The Home Page of Patient Register
     And click on new button
     Then assert the all page is clean
 
-  @TC0027
+  @TC0027 @Bug
   Scenario: The user can clean the patient information page by click on “delete" (Sil) button
     When insert the TC Identity Number in TC ID box
     And press enter
+    And click continue button
     And check TC ID warning popup
     And assert the patient's TC ID
     And click on delete button
     Then assert the all page is clean
 
-  @TC0029
+  @TC0029 @Bug
   Scenario: The user can print the patient's information out by click on “print" (Yazdır) button
     When insert the TC Identity Number in TC ID box
     And press enter
+    And click continue button
     And assert the patient's TC ID
     And click on print button
     Then assert the popup for print out
@@ -141,7 +145,7 @@ Feature: The Home Page of Patient Register
     And click on Health Council button
     Then assert the Health Council page
 
-  @TC0040
+  @TC0040 @Bug
   Scenario: The user can go to Utility Operations page (Yardımcı İşlemler)
     When click on Utility Operations button
     Then assert the Utility Operations pop up
@@ -291,7 +295,8 @@ Feature: The Home Page of Patient Register
     And close the warning message
     And insert the TC Identity Number in TC ID box
     And press enter
-    And check TC ID warning popup
+    And click continue button
+   # And check TC ID warning popup
     And click on foreign patient registration form button
     Then assert the foreign patient registration form page
     Then close the foreign patient registration form page
@@ -335,6 +340,7 @@ Feature: The Home Page of Patient Register
     And assert the social care drop down list
     And click on needs assessment drop down list
     And assert the needs assessment drop down list
+    And click on acceptance information button
     And assert the description "abeyis test automation" in complaint box
     And assert the description "abeyis" in reason for preference box
     And assert the TC ID of relationship
@@ -348,18 +354,18 @@ Feature: The Home Page of Patient Register
   Scenario: The user can check the details about patient record
     When insert the TC Identity Number in TC ID box
     And press enter
-    And check TC ID warning popup
+    And click continue button
     And scroll down
     And assert the all services that patient got
     And click on inspect button for first service
     And click on services button
     Then assert the patient's services page
 
-  @TC0089_b
+  @TC0144 @Bug
   Scenario: The user can delete or cancel the appointment
     When insert the TC Identity Number in TC ID box
     And press enter
-    And check TC ID warning popup
+    And click continue button
     And scroll down
     And assert the all services that patient got
     And click on inspect button for first service

@@ -13,8 +13,6 @@ public class Hasta_Kayit_Page_M {
     @FindBy(id = "PopupSaveButton_0")
     public WebElement saveButton;
 
-//----------------------------- Merve
-
     @FindBy(id = "TXT_HASTA_KAYIT_TC_KIMLIK_NO")
     public WebElement TCsearchBox;
 
@@ -36,50 +34,11 @@ public class Hasta_Kayit_Page_M {
     @FindBy(xpath = "//input[@id='TXT_HASTA_KAYIT_TAHSIS_NO']")
     public WebElement pasaportIdSearchBox;
 
-    @FindBy(xpath = "//input[@id='TXT_HASTA_KAYIT_KARNE_SERI']")
-    public WebElement pasaportNoSearchBox1;
-
     @FindBy(xpath = "//input[@id='TXT_HASTA_KAYIT_KARNE_NO']")
     public WebElement pasaportNoSearchBox2;
 
-    @FindBy(xpath = "//tr[@id='HastaListesi_DXEmptyRow']")
-    public WebElement patientListMessage;
-
-    //------------------------------- İlyas
-    @FindBy(xpath = "//*[@id=\"TXT_HASTA_KAYIT_TEL\"]")
-    public WebElement telefonnumarasi;
-
     @FindBy(xpath = "//*[@id=\"TXT_HASTA_KAYIT_CEP_TEL\"]")
     public WebElement mobilePhoneNumber;
-
-    @FindBy(xpath = "//*[@id=\"TXT_HASTA_KAYIT_EMAIL\"]")
-    public WebElement email;
-
-    @FindBy(xpath = "//*[@id=\"TXT_HASTA_KAYIT_MESLEK_KODU\"]")
-    public WebElement meslek;
-
-    @FindBy(xpath = "//*[@id=\"CMB_HASTA_KAYIT_STATUS\"]")
-    public WebElement statu;
-
-    @FindBy(xpath = "//*[@id=\"CMB_HASTA_KAYIT_OGRENIM\"]")
-    public WebElement ogrenim;
-
-    @FindBy(xpath = "//*[@id=\"CMB_HASTA_KAYIT_KAN_GRUBU\"]")
-    public WebElement kangrubu;
-
-    @FindBy(xpath = "//*[@id='CHK_HASTA_KAYIT_SMS_GONDERILEBILIR']")
-    public WebElement SMS;
-
-    @FindBy(id = "CHK_HASTA_KAYIT_EMAIL_GONDERILEBILIR")
-    public WebElement EMAIL;
-
-    @FindBy(xpath = "//*[@id='CHK_HASTA_KAYIT_KIMLIK_FOTOKOPISI']")
-    public WebElement kimlikfotokopi;
-
-    @FindBy(xpath = "//*[@id='CHK_HASTA_KAYIT_KVKK_ONAM']")
-    public WebElement KVKK;
-
-//--------------------------------------------------------- Baris
 
     @FindBy(id = "CMB_HASTA_KAYIT_UYRUK")
     public WebElement nationalityDropdown;
@@ -93,20 +52,12 @@ public class Hasta_Kayit_Page_M {
     @FindBy(xpath = "//*[@id=\"HastaTuruList_tccell1_2\"]/a")
     public WebElement comingForEducation;
 
+
     @FindBy(id = "TXT_HASTA_KAYIT_ANNE_TC_KIMLIK_NO")
     public WebElement motherTCNoSearchBox;
 
     @FindBy(xpath = "//*[@id=\"hataIcerik\"]/div/div[1]/p")
     public WebElement WarningMessage;
-
-    @FindBy(xpath = "/html/body/div[1]/div/div/div[1]/p")
-    public WebElement transactionSuccessfulWarningMessage;
-
-    @FindBy(xpath = "//label[@id=\"LB_TAHSIS_NO\"]")
-    public WebElement passportIdBoxName;
-
-    @FindBy(xpath = "//label[@id=\"LB_KARNE_SERI_NO\"]")
-    public WebElement passportNoBoxName;
 
     @FindBy(xpath = "//*[@id=\"LB_TAHSIS_NO\"]")
     public WebElement allocationNumberBoxName;
@@ -117,8 +68,11 @@ public class Hasta_Kayit_Page_M {
     @FindBy(xpath = "//a[@class='PopupCloseButton PopupButton']")
     public WebElement closeButton;
 
-    @FindBy(xpath = "//span[@class='info item']")
-    public WebElement close;
+    @FindBy (xpath = "//span[@class='no item']")
+    public WebElement cl;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div/div[3]/span")
+    public WebElement closeButon;
 
     @FindBy(xpath = "//a[@title='Kapat']")
     public WebElement kapatButton;
@@ -126,17 +80,8 @@ public class Hasta_Kayit_Page_M {
     @FindBy(xpath = "(//input[@class='inpt tacnt wpx50'])[1]")
     public WebElement policnicSearchBox;
 
-    @FindBy(id = "polkList_tccell4_14")
-    public WebElement policnicChooseButton;
-
     @FindBy(xpath = "//select[@class='wpx190']")
     public WebElement arrivalType;
-
-    @FindBy(xpath = "//input[@id='HASTA_NO']")
-    public WebElement patientNumber;
-
-    @FindBy(xpath = "/html/body/div[1]/div[4]/section/form/div[3]/div[1]/div[1]/div/div[3]/input[2]")
-    public WebElement patienttNumber;
 
     @FindBy(xpath = "//span[@class='tbText']")
     public WebElement patientSaveButton;
@@ -144,18 +89,11 @@ public class Hasta_Kayit_Page_M {
     @FindBy(xpath = "//*[@id=\"hataIcerik\"]/div/div[3]/span")
     public WebElement readAuthorizationCloseButton;
 
-    @FindBy(xpath = "//*[@id=\"onayVazgecIcerik\"]/div/div[3]/span[2]")
-    public WebElement noItem;
-
     @FindBy(xpath = "/html/body/div[1]/div[3]/header/nav[2]/ul/li[3]/a")
     public WebElement user;
 
-    @FindBy(xpath = "/html/body/div[1]/div[3]/header/nav[2]/ul/li[3]/ul/li[10]/a")
-    public WebElement exit;
-
     @FindBy(linkText = "Detaylı Hasta Arama")
     public WebElement detailedPatientSearch;
-
 
     @FindBy(xpath = "//*[@id=\"btnSorgula\"]")
     public WebElement queryButton;
@@ -175,7 +113,6 @@ public class Hasta_Kayit_Page_M {
     @FindBy(xpath = "//label[text()=\"Doğum Sırası\"]")
     public WebElement birthOrder;
 
-
     @FindBy(id = "CMB_HASTA_KAYIT_YAKINLIK")
     public WebElement yakinligiDropdown;
 
@@ -188,8 +125,6 @@ public class Hasta_Kayit_Page_M {
     @FindBy(id = "TXT_HASTA_KAYIT_DOGUM_SIRASI")
     public WebElement birthOrderSearchBox;
 
-
-
     @FindBy(xpath = "(//td[@class='dxgv dx-ellipsis dx-ar'])[2]")
     public WebElement protocolNo;
 
@@ -201,6 +136,27 @@ public class Hasta_Kayit_Page_M {
 
     @FindBy (xpath = "//*[@id=\"basariliIcerik\"]/div/div[3]/span")
     public WebElement infoSaved;
+
+    @FindBy (id = "TXT_HASTA_KAYIT_BEBEK_DOGUM_HAFTA")
+    public WebElement birthWeekButton;
+
+    @FindBy (id = "TXT_HASTA_KAYIT_BEBEK_DOGUM_HAFTA_GUN")
+    public WebElement birthDayButton;
+
+    @FindBy (xpath = "//*[@id=\"uyariMesajiIcerik\"]/div/div[3]/span")
+    public WebElement warningButtonAdd;
+
+    @FindBy (id = "TXT_HASTA_KAYIT_EMAIL")
+    public WebElement emailSearchBox;
+
+    @FindBy (xpath = "//*[@id=\"onayVazgecIcerik\"]/div/div[3]/span[2]")
+    public WebElement acceptButtomNo;
+
+    @FindBy (xpath = "//a[contains(text(),'Çıkış')]")
+    public WebElement exit;
+
+    @FindBy (xpath = "//span[@class='yes item']")
+    public WebElement continueYesButton;
 
 
     }

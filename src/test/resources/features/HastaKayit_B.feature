@@ -1,3 +1,4 @@
+@ServiceExaminationRegistration
 @probel_hastaKayit_B
 Feature: probel_hastaKayit
 
@@ -7,7 +8,7 @@ Feature: probel_hastaKayit
     And Click the Hasta button
     And Enter Kurum, Kurum detay
 
-
+  @TC0030
   Scenario: TC0030 Patient registration should be done with valid patient data (Kimliksiz Hasta)
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
     And Write a valid Cep Telefonu on Hasta Kayıt Page
@@ -52,9 +53,10 @@ Feature: probel_hastaKayit
     And Click Kaydet button on Hasta Kayıt Page
     Then İşlem Başarılı   shouldnt be seen on popoup on Hasta Kayıt Page
 
-  Scenario: TC? Patient registration shouldn't be done without a valid name and a lastname (Kimliksiz Hasta)
+  Scenario: TC0136 Patient registration shouldn't be done without a valid name and a lastname (Kimliksiz Hasta)
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
     And Write a valid Cep Telefonu on Hasta Kayıt Page
+    And Select a valid Doğum Tarihi on Hasta Kayıt Page
     And Select Cinsiyeti on Hasta Kayıt Page
     And Click Kaydet button on Hasta Kayıt Page
     Then İşlem Başarılı   shouldnt be seen on popoup on Hasta Kayıt Page
@@ -75,6 +77,7 @@ Feature: probel_hastaKayit
     And Click Kaydet button from on Muayene Kayıt Page
     Then Bilgiler Kaydedildi shouldnt be seen on Popup Alert on Muayene Kayıt Page
 
+  @TC0086
   Scenario: TC0086 Only letters and space character should be written in the first and last name section (Kimliksiz Hasta)
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
     And Write a valid Cep Telefonu on Hasta Kayıt Page
@@ -85,7 +88,7 @@ Feature: probel_hastaKayit
     And Click Kaydet button on Hasta Kayıt Page
     Then İşlem Başarılı   shouldnt be seen on popoup on Hasta Kayıt Page
 
-  Scenario: TC0079 Only women patients should be resgistered to (Kimliksiz Hasta)
+  Scenario:  TC0079 Only women patients can be registered to KADIN DOGUM POLIKLINIK
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
     And Write a valid Cep Telefonu on Hasta Kayıt Page
     And Select a valid Doğum Tarihi on Hasta Kayıt Page
@@ -97,8 +100,8 @@ Feature: probel_hastaKayit
     When Select  Poliklinik as KADIN DOĞUM on Muayene Kayıt Page
     Then An alert should be seen on Muayene Kayıt Page
 
-  Scenario:  TC00? If Nationality is different from Türkiye,
-  Passport Id and Passport number box shouldn't be active (Kimliksiz Hasta)
+  Scenario: TC0137 If nationality is different from Türkiye,
+  then Passport Id and Passport Number box shouldn't be active
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
     And Select country  from   Uyruğu drop down menu on Hasta Kayıt Page
       | country                    |
@@ -108,7 +111,7 @@ Feature: probel_hastaKayit
       | TOGO                       |
 
 
-  Scenario: TC00?? If Nationality  is selected as Türkiye, Mavikart shouldn't be clickable (Kimliksiz Hasta)
+  Scenario: TC0138 If Nationality  is selected as Türkiye, Mavikart shouldn't be clickable (Kimliksiz Hasta)
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
     And click Mavikart checkbox on Hasta Kayıt Page
     And Select a valid Doğum Tarihi on Hasta Kayıt Page
@@ -117,17 +120,19 @@ Feature: probel_hastaKayit
     And Click Kaydet button on Hasta Kayıt Page
     Then İşlem Başarılı   shouldnt be seen on popoup on Hasta Kayıt Page
 
-  Scenario: TC001???  If Nationality  is selected as Türkiye, Mavikart shouldn't be clickable
+  Scenario: TC0139 If Yenidogan checkbox is selected then only positive integers should be written to Dogumsirasi
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
+    And Select a valid Doğum Tarihi on Hasta Kayıt Page
     And click Yenidoğan checkbox  on Hasta Kayıt Page
+    And Select Cinsiyeti on Hasta Kayıt Page
     Then Only positive integers should be written to Doğumsırası on Hasta Kayıt Page
       | Number |
       | -5     |
       | 0      |
-      | 4.7    |
-      | -2.5   |
+      | -2     |
+      | 3      |
 
-  Scenario: TC00102 If E-mail Gönderilebilir box is  checked  then
+  Scenario: TC0102 If E-mail Gönderilebilir box is  checked  then
   E-mail box should be active and a valid email should be accepted (Kimliksiz Hasta)
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
     And click  E-mail Gönderilebilir button   on Hasta Kayıt Page
@@ -145,7 +150,7 @@ Feature: probel_hastaKayit
       | @gmail.com       |
       | a     @gmail.com |
 
-  Scenario: TC0010?? newborn is not clicked for a patient whose age is older than 30 days (Kimliksiz Hasta)
+  Scenario: TC0140 newborn  cannot be clicked for a patient whose age is older than 30 days (Kimliksiz Hasta)
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
     And Write a valid Cep Telefonu on Hasta Kayıt Page
     And Select Cinsiyeti on Hasta Kayıt Page
@@ -154,17 +159,17 @@ Feature: probel_hastaKayit
     And write a valid value on Günü for Bebeğin Doğum  on Hasta Kayıt Page
     And Only valid Birth Dates should be accepted on Hasta Kayıt Sayfası
       | Birth Date |
-      | 10.08.2023 |
+      | 20.08.2023 |
       | 15.07.2021 |
-      | 15.07.2023 |
-      | 14.07.2023 |
-      | 16.07.2023 |
+      | 24.07.2023 |
+      | 25.07.2023 |
+      | 26.07.2023 |
       | 02.01.2010 |
       | 25.08.2023 |
       | 02.08.2030 |
       | 15.08.2040 |
 
-  Scenario: TC0010???  The Age of The Mother cannot be smaller than 15 (Kimliksiz Hasta)
+  Scenario: TC0141  The Age of The Mother cannot be smaller than 15 (Kimliksiz Hasta)
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
     And Write a valid Cep Telefonu on Hasta Kayıt Page
     And Select Cinsiyeti on Hasta Kayıt Page
@@ -180,13 +185,13 @@ Feature: probel_hastaKayit
       | 15.08.1990 |
 
 
-  Scenario: TC0010???  If something except Kendisi is selected, then Kart Sahibi box should be active (Kimliksiz Hasta)
+  Scenario: TC142  If something except Kendisi is selected, then Kart Sahibi box should be active (Kimliksiz Hasta)
     When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
     And Select Proximity from Yakınlığı drop down menu on Hasta Kayıt Page
     Then Kart Sahibi box should be active on Hasta Kayıt Page when If something except Kendisi is selected
 
 
-  Scenario: TC0080 If something except Kendisi is selected
+  Scenario: TC0143 If Mavi Kartlilar is selected then patient resgistration should be done with a valid ID
     When Select Mavi Kartlılar from   Hasta Türü drop down menu on Hasta Kayıt Page
     And Write a valid Cep Telefonu on Hasta Kayıt Page
     And Select a valid Doğum Tarihi on Hasta Kayıt Page
@@ -196,7 +201,7 @@ Feature: probel_hastaKayit
       | Mobile Phone |
       | 01234567891  |
       | 45678912123  |
-      | 60835323842  |
+      | 30874870302  |
       | 33241633218  |
       | 7724         |
 
@@ -205,7 +210,7 @@ Feature: probel_hastaKayit
     When Select Mavi Kartlılar from   Hasta Türü drop down menu on Hasta Kayıt Page
     And Write a valid T.C. Kimlik No on Hasta Kayıt Page
     And Write a valid Cep Telefonu on Hasta Kayıt Page
-   And Select a valid Doğum Tarihi on Hasta Kayıt Page
+    And Select a valid Doğum Tarihi on Hasta Kayıt Page
     And Select Cinsiyeti on Hasta Kayıt Page
     And Write a valid Soyadı on Hasta Kayıt Page
     And Write a valid Adı on Hasta Kayıt Page

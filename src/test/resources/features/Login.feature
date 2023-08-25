@@ -1,4 +1,3 @@
-
 @login
 Feature: test
   Scenario: login

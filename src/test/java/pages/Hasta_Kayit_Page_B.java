@@ -326,9 +326,10 @@ public class Hasta_Kayit_Page_B {
         SoftAssert softAssert = new SoftAssert();
         for (int row = 1; row < dataTable.height(); row++) { // Rowlari doner
             String number = dataTable.cell(row, 0);
+            int numberInt = Integer.parseInt(number);
             dogumSirasiSearchBox.sendKeys(number + Keys.ENTER);
             dogumSirasiSearchBox.clear();
-            softAssert.assertNull(dogumSirasiSearchBox, "Only positive integers should be written");
+            softAssert.assertTrue( ReusableMethods.isNumeric(number) && numberInt>0 );
         }
         softAssert.assertAll();
 

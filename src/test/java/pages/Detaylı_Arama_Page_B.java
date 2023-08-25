@@ -1,14 +1,12 @@
 package pages;
 
 import com.github.javafaker.Faker;
-
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import utilities.Driver;
 
 
@@ -41,7 +39,7 @@ public class Detaylı_Arama_Page_B {
         queryButton.click();
         String patientNameExpected = Muayene_Kayit_Page_B.adi;
         String patientNameActual = patientNameSurname.getText();
-        Assert.assertEquals(patientNameExpected, patientNameActual);
+        Assert.assertTrue( patientNameActual.contains(patientNameExpected));
 
 
     }

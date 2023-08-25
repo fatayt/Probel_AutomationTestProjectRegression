@@ -1,16 +1,15 @@
 package stepdefinitions;
 
 import com.github.javafaker.Faker;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import org.openqa.selenium.interactions.Actions;
 import pages.BasePage;
 import pages.Hasta_Kayit_Page_B;
 import pages.Muayene_Kayit_Page_B;
 import utilities.Driver;
-import io.cucumber.datatable.DataTable;
 
 import java.text.ParseException;
 import java.time.LocalDate;

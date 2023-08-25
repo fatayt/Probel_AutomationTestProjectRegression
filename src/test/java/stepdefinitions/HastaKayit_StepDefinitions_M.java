@@ -88,7 +88,8 @@ public class HastaKayit_StepDefinitions_M {
 
     @And("User clicks the pop ap close button")
     public void userClicksThePopApCloseButton() {
-        mPage.close.click();
+        //mPage.close.click();
+        mPage.cl.click();
     }
 
     @And("User clicks the page close button")
@@ -116,7 +117,7 @@ public class HastaKayit_StepDefinitions_M {
     @And("User clicks the Save button on Inspection Registration Page")
     public void userClicksTheSaveButtonOnInspectionRegistrationPage() {
         mPage.patientSaveButton.click();
-        ReusableMethods.waitForVisibility(mPage.readAuthorizationCloseButton,5);
+        ReusableMethods.waitForVisibility(mPage.readAuthorizationCloseButton, 5);
         mPage.readAuthorizationCloseButton.click();
         ReusableMethods.waitFor(4);
     }
@@ -142,46 +143,23 @@ public class HastaKayit_StepDefinitions_M {
         Assert.assertEquals(mPage.lastProtocolNo.getText(), pN);
     }
 
-
-    @Then("User verifies that Passport Id is requested")
-    public void userVerifiesThatPassportIdIsRequested() {
-        String passportName = "Pasaport Id";
-        String passportNo = "Pasaport No";
-        String allocationNumberBoxName = ReusableMethods.getElementText(mPage.allocationNumberBoxName);
-        String reportCardSerialNoBoxName = ReusableMethods.getElementText(mPage.reportCardSerialNoBoxName);
-        Assert.assertEquals(allocationNumberBoxName, passportName);
-
-
-    }
-
-    @Then("User verifies that Passport No is requested")
-    public void userVerifiesThatPassportNoIsRequested() {
-        String passportName = "Pasaport Id";
-        String passportNo = "Pasaport No";
-        String allocationNumberBoxName = ReusableMethods.getElementText(mPage.allocationNumberBoxName);
-        String reportCardSerialNoBoxName = ReusableMethods.getElementText(mPage.reportCardSerialNoBoxName);
-        Assert.assertEquals(reportCardSerialNoBoxName, passportNo);
-    }
-
     @Then("User Logs out")
     public void userLogsOut() {
-        mPage.closeButton.click();
-        System.out.println("close buttona tıklanıd");
-        //  mPage.noItem.click();
-        //  System.out.println("no item tıklandı");
-        // actions.moveToElement(mPage.user).perform();
-        // ReusableMethods.waitFor(3);
+        mPage.kapatButton.click();
+        mPage.acceptButtomNo.click();
+        ReusableMethods.jseWithClick(Driver.getDriver(), mPage.user);
+        ReusableMethods.jseWithClick(Driver.getDriver(), mPage.exit);
+
 
     }
 
     @Then("User verifies that the message {string} is displayed")
     public void userVerifiesThatTheMessageIsDisplayed(String message) {
-        ReusableMethods.waitForVisibility(mPage.WarningMessage,10);
+        ReusableMethods.waitForVisibility(mPage.WarningMessage, 10);
         String m = mPage.WarningMessage.getText();
         System.out.println(m);
         Assert.assertTrue(m.contains(ConfigReader.getProperty(message)));
     }
-
 
 
     @And("User tick the E-mail Gonderilebilir checkbox")
@@ -195,8 +173,8 @@ public class HastaKayit_StepDefinitions_M {
         mPage.newbornCheckbox.click();
     }
 
-    @And("User enters the date of birth less than {int} months old in date of birth box")
-    public void userEntersTheDateOfBirthLessThanMonthsOldInDateOfBirthBox(int month) {
+    @And("User enters the date of birth less than alti months old in date of birth box")
+    public void userEntersTheDateOfBirthLessThanAltiMonthsOldInDateOfBirthBox() {
         LocalDate tarih = LocalDate.now();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("ddMMyyyy");
         tarih = tarih.minusMonths(6);
@@ -208,6 +186,7 @@ public class HastaKayit_StepDefinitions_M {
         mPage.dateOfBirthSearchBox.sendKeys(Keys.ENTER);
         ReusableMethods.waitFor(4);
     }
+
 
     @And("User enters ID in mother's TC ID box")
     public void userEntersIDInMotherSTCIDBox() {
@@ -282,6 +261,7 @@ public class HastaKayit_StepDefinitions_M {
 
     @And("User enters birth order")
     public void userEntersBirthOrder() {
+        mPage.birthOrderSearchBox.clear();
         mPage.birthOrderSearchBox.sendKeys("-2");
     }
 
@@ -322,7 +302,7 @@ public class HastaKayit_StepDefinitions_M {
     public void userEntersDateOfBirthInDateOfBirthBox() {
         LocalDate tarih = LocalDate.now();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("ddMMyyyy");
-        tarih = tarih.minusMonths(15);
+        tarih = tarih.minusMonths(15).minusYears(15);
         String data = format.format(tarih);
         ReusableMethods.waitForVisibility(mPage.dateOfBirthSearchBox, 5);
         ReusableMethods.waitFor(4);
@@ -348,6 +328,7 @@ public class HastaKayit_StepDefinitions_M {
     public void userClicksTheSaveButtonAgain() {
 
         mPage.patientSaveButton.click();
+        ReusableMethods.waitForVisibility(mPage.infoSaved, 4);
         mPage.infoSaved.click();
         ReusableMethods.waitFor(3);
     }
@@ -368,4 +349,41 @@ public class HastaKayit_StepDefinitions_M {
         mPage.comingForEducation.click();
     }
 
+
+    @And("User enters birth week and birth day")
+    public void userEntersBirthWeekAndBirthDay() {
+        mPage.birthWeekButton.sendKeys("40");
+        mPage.birthDayButton.sendKeys("5");
+    }
+
+    @And("User clicks the warning Button")
+    public void userClicksTheWarningButton() {
+        mPage.warningButtonAdd.click();
+    }
+
+    @And("User clicks the popap close button")
+    public void userClicksThePopapCloseButton() {
+        ReusableMethods.waitForVisibility(mPage.closeButton, 4);
+        mPage.closeButon.click();
+    }
+
+    @And("User enters email without @")
+    public void userEntersEmailWithout() {
+        mPage.emailSearchBox.sendKeys(ConfigReader.getProperty("eMailNo@"));
+    }
+
+    @Then("User verifies that Passport Id and No is requested")
+    public void userVerifiesThatPassportIdAndNoIsRequested() {
+        String passportName = "Pasaport Id";
+        String passportNo = "Pasaport No";
+        String allocationNumberBoxName = ReusableMethods.getElementText(mPage.allocationNumberBoxName);
+        String reportCardSerialNoBoxName = ReusableMethods.getElementText(mPage.reportCardSerialNoBoxName);
+        Assert.assertEquals(allocationNumberBoxName, passportName);
+        Assert.assertEquals(reportCardSerialNoBoxName, passportNo);
+    }
+
+    @And("User clicks the YES button")
+    public void userClicksTheYESButton() {
+        mPage.continueYesButton.click();
+    }
 }

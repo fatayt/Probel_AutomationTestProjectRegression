@@ -1,3 +1,4 @@
+@ServiceExaminationRegistration
 Feature: fatih01
 
   Background:

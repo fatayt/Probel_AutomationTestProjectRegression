@@ -1,3 +1,4 @@
+@ServiceExaminationRegistration
 @probel_hastaKayit
 Feature: probel_hastaKayit
   Background:

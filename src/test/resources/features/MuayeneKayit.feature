@@ -1,3 +1,4 @@
+@ServiceExaminationRegistration
 @MuayeneKayit
 Feature: The Home Page of Patient Register
 

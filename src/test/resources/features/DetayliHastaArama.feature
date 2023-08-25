@@ -1,3 +1,4 @@
+@ServiceExaminationRegistration
 Feature:Detaylı Hasta Arama
   Background:
     Given The user logs in

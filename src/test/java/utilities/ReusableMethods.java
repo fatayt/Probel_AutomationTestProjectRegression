@@ -12,8 +12,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -207,12 +207,14 @@ public class ReusableMethods {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         LocalDate localDate = LocalDate.parse(dateStr, formatter);
         LocalDate currentDate = LocalDate.now();
-        int daysBetween = (int) ChronoUnit.DAYS.between(localDate, currentDate);
-        if (daysBetween <= 30 && daysBetween >= 0) {
+        Period period = localDate.until(currentDate);
+        long totalDays = period.getYears() * 365L + period.getMonths() * 30L + period.getDays();
+        if (totalDays <= 30 && totalDays >= 0) {
             newborn = true;
         }
         return newborn;
     }
+
 
     public static Boolean isNumeric(String str) {
         //is numeric method
@@ -257,7 +259,6 @@ public class ReusableMethods {
                 a2 = ad % 10;
                 ad = ad / 10;
                 a1 = ad % 10;
-                System.out.println("b2: " + b2 + " b1: " + b1 + " a1: " + a1 + " a2: " + a2 + " a3: " + a3 + " a4: " + a4 + " a5: " + a5 + " a6: " + a6 + " a7: " + a7 + " a8: " + a8 + " a9: " + a9);
                 if (((a1 + a3 + a5 + a7 + a9) * 7 - (a2 + a4 + a6 + a8)) % 10 == b1 && ((a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + b1)) % 10 == b2) {
                     isValid = true;
                 }
@@ -286,6 +287,14 @@ public class ReusableMethods {
         return element.getText();
     }
 
+
+    public static void jseWithClick(WebDriver driver,WebElement element){
+
+        JavascriptExecutor jse =(JavascriptExecutor)driver;
+
+        jse.executeScript("arguments[0].click();",element);
+
+    }
 }
 
 

@@ -6,7 +6,7 @@ Feature: The Home Page of Patient Register
 
   Background:
     Given The user logs in
-    And The user goes Hasta İşlemleri, Ayaktan Hasta İşlemleri and then click Poliklinik Muayene Kayıt
+    And The user goes Hasta Islemleri, Ayaktan Hasta Islemleri and then click Poliklinik Muayene Kayit
 
   @TC0008 @Smoke
   Scenario: The user can display the registered patient
@@ -129,7 +129,7 @@ Feature: The Home Page of Patient Register
     Then assert the Report Transactions pop up
 
   @TC0035
-  Scenario: The user can go to Health Council page (Sağlık Kurulu)
+  Scenario: The user can go to Health Council page (Saglik Kurulu)
     When click on Health Council button
     And assert the health council warning message
     And close the warning message
@@ -146,12 +146,12 @@ Feature: The Home Page of Patient Register
     Then assert the Health Council page
 
   @TC0040 @Bug
-  Scenario: The user can go to Utility Operations page (Yardımcı İşlemler)
+  Scenario: The user can go to Utility Operations page (Yardimci Islemler)
     When click on Utility Operations button
     Then assert the Utility Operations pop up
 
   @TC0041
-  Scenario: The user can go to the RIS Acceptance Procedures (Ris Kabul İşlemleri) page
+  Scenario: The user can go to the RIS Acceptance Procedures (Ris Kabul Islemleri) page
     When click on RIS button
     And assert the RIS warning message
     And close the warning message
@@ -163,7 +163,7 @@ Feature: The Home Page of Patient Register
     Then assert the RIS Acceptance Procedures page
 
   @TC0042
-  Scenario: The user can go to the Lab. Pre-acceptance (Lab. Ön Kabul) page
+  Scenario: The user can go to the Lab. Pre-acceptance (Lab. On Kabul) page
     When click on Lab button
     And assert the Lab warning message
     And close the warning message

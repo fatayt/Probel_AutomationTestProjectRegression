@@ -8,6 +8,7 @@ import pages.BasePage;
 import pages.Login_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class Login_StepDefinitions {
 
@@ -26,15 +27,10 @@ public class Login_StepDefinitions {
         login_page.clickButton.click();
 
         }
-        @When("The user goes Hasta İşlemleri, Ayaktan Hasta İşlemleri and then click Poliklinik Muayene Kayıt")
-        public void the_user_goes_hasta_işlemleri_ayaktan_hasta_işlemleri_and_then_click_poliklinik_muayene_kayıt() {
-
-            actions.moveToElement(basePage.hastaIslemleri).
-               moveToElement(basePage.ayaktanHastaIslemleri).
-                perform();
-
-            basePage.poliklinikMuayneKayit.click();
-
-
+        @When("The user goes Hasta Islemleri, Ayaktan Hasta Islemleri and then click Poliklinik Muayene Kayit")
+        public void the_user_goes_hasta_islemleri_ayaktan_hasta_islemleri_and_then_click_poliklinik_muayene_kayit() {
+            ReusableMethods.jseWithClick(Driver.getDriver(), basePage.hastaIslemleri);
+            ReusableMethods.jseWithClick(Driver.getDriver(), basePage.ayaktanHastaIslemleri);
+            ReusableMethods.jseWithClick(Driver.getDriver(), basePage.poliklinikMuayneKayit);
         }
 }

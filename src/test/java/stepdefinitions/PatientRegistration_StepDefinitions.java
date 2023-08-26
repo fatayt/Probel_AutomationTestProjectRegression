@@ -1423,4 +1423,9 @@ public class PatientRegistration_StepDefinitions {
     public void userClicksTheYESButton() {
         hkp.continueYesButton.click();
     }
+
+    @And("User enters validTCID in TC ID box")
+    public void userEntersValidTCIDInTCIDBox() {
+        hkp.TCsearchBox.sendKeys(ReusableMethods.generateValidId());
+    }
 }

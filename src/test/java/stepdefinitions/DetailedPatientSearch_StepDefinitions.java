@@ -111,20 +111,6 @@ public class DetailedPatientSearch_StepDefinitions {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Then("Registered patient should be seen on Detaylı Hasta Arama Page")
     public void registeredPatientShouldBeSeenOnDetaylıHastaAramaPage() {
         dha.confirmRegisteredPatient();

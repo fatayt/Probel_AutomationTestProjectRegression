@@ -5,7 +5,7 @@
 Feature:Detayli Hasta Arama
   Background:
     Given The user logs in
-    And The user goes Hasta İşlemleri, Ayaktan Hasta İşlemleri and then click Poliklinik Muayene Kayıt
+    And The user goes Hasta Islemleri, Ayaktan Hasta Islemleri and then click Poliklinik Muayene Kayit
     And The user clicks Detayli Hasta arama Button
 
   @TC0052
@@ -42,15 +42,9 @@ Feature:Detayli Hasta Arama
     And Verify that patients registered in the Last Three Months can be listed
 
   @TC0057
-  Scenario: TC0057 - *Patients should be listed with "Geliş Tarihi"
+  Scenario: TC0057 - Patients should be listed with "Geliş Tarihi"
     And Gelis Detayli Tarih Secimitab is clicked
     And Son Three Months tab is clicked
     And Seçtab is clicked
     And Query tab is clicked.
     And Verify that patients registered in the Last Three Months can be listed two
-
-  @TC0000000001
-  Scenario: TC0000000001
-    When Select Kimliksiz Hasta from   Hasta Türü drop down menu on Hasta Kayıt Page
-    And Select Proximity from Yakınlığı drop down menu on Hasta Kayıt Page
-    Then Kart Sahibi box should be active on Hasta Kayıt Page when If something except Kendisi is selected

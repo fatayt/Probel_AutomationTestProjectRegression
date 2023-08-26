@@ -4,7 +4,7 @@
 Feature: probel_hastaKayit
   Background:
     Given The user logs in
-    And The user goes Hasta İşlemleri, Ayaktan Hasta İşlemleri and then click Poliklinik Muayene Kayıt
+    And The user goes Hasta Islemleri, Ayaktan Hasta Islemleri and then click Poliklinik Muayene Kayit
     And Click the Hasta button
 
   @TC0001
@@ -41,7 +41,6 @@ Feature: probel_hastaKayit
     And user verifies the message "Bilgiler kaydedildi."
     And  user breaks down the popup to the TAMAM button
     Then user closes the application
-
 
   @TC0002
   Scenario: TC0002 - Received an error "Passport No/Id" when the user entered an incorrect "Tahsis No/Id"
@@ -219,7 +218,7 @@ Feature: probel_hastaKayit
 
 
   @TC0047
-  Scenario:TC0047 - The user registers a patient in the type " TÜRK SOYLU YABANCILAR"
+  Scenario:TC0047 - The user registers a patient in the type "TÜRK SOYLU YABANCILAR"
     Given Enter Kurum, Kurum detay
     And user selects the Uyruk AZERBEYCAN
     And user click hasta Turu
@@ -255,7 +254,6 @@ Feature: probel_hastaKayit
     And user verifies the message "Bilgiler kaydedildi."
     And  user breaks down the popup to the TAMAM button
     Then user closes the application
-
 
   @TC0048
   Scenario:TC0048 - User registers with phone number in correct format
@@ -875,9 +873,9 @@ Feature: probel_hastaKayit
     And User clicks Gender box and chooses the "gender_2"
     And User enters date Of Birth in date of birth box
     And User enters "MobilePhoneNumber" in mobile phone number box
-    And User enters "validTCID" in TC ID box
+    And User enters validTCID in TC ID box
     And User clicks the Save button
-    And User clicks the pop ap close button
+    And User clicks the succes close button
     And User clicks the page close button
     And User selects the polyclinic on Inspection Registration Page
     And User selects the arrival type

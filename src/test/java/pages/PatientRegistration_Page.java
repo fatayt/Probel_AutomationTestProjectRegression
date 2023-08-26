@@ -27,12 +27,6 @@ public class PatientRegistration_Page {
     Actions actions = new Actions(Driver.getDriver());
     Faker faker = new Faker();
 
-
-
-
-
-
-
     @FindBy(id = "PopupSaveButton_0")
     public WebElement saveButton;
 
@@ -181,18 +175,7 @@ public class PatientRegistration_Page {
     @FindBy (xpath = "//span[@class='yes item']")
     public WebElement continueYesButton;
 
-
-
-
-
-
-
-
-
-
-
-
-    @FindBy(id="TXT_HASTA_KAYIT_SOYADI")
+    @FindBy(xpath = "//input[@id='TXT_HASTA_KAYIT_SOYADI']")
     public WebElement soyadiSearchBox;
 
     @FindBy(id="TXT_HASTA_KAYIT_ADI")
@@ -570,8 +553,6 @@ public class PatientRegistration_Page {
             softAssert.assertEquals(kapatString.contains("İşlem"), checkAge);
         }
         softAssert.assertAll();
-
-
     }
 
 

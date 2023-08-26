@@ -361,7 +361,7 @@ Feature: The Home Page of Patient Register
     And click on services button
     Then assert the patient's services page
 
-  @TC0144 @Bug
+  @TC0144 @Smoke @Bug
   Scenario: The user can delete or cancel the appointment
     When insert the TC Identity Number in TC ID box
     And press enter

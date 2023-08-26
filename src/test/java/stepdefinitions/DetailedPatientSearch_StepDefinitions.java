@@ -5,12 +5,12 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import pages.BasePage;
-import pages.DetayliHastaArama_Page;
+import pages.DetailedPatientSearch_Page;
 import utilities.Driver;
 
-public class DetayliHastaArama_StepDefinitions {
+public class DetailedPatientSearch_StepDefinitions {
     BasePage basePage = new BasePage();
-    DetayliHastaArama_Page dha = new DetayliHastaArama_Page();
+    DetailedPatientSearch_Page dha = new DetailedPatientSearch_Page();
     Actions actions = new Actions(Driver.getDriver());
 
 

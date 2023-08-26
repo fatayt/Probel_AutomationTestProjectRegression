@@ -16,12 +16,12 @@ import utilities.ReusableMethods;
 
 import java.util.List;
 
-public class MuayeneKayit_Page {
+public class ServiceRegistration_Page {
     WebDriver driver;
     Actions actions = new Actions(Driver.getDriver());
 
 
-    public MuayeneKayit_Page(WebDriver driver) {
+    public ServiceRegistration_Page(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

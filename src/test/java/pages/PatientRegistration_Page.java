@@ -19,8 +19,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-public class HastaKayit_Page {
-    public HastaKayit_Page() {
+public class PatientRegistration_Page {
+    public PatientRegistration_Page() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

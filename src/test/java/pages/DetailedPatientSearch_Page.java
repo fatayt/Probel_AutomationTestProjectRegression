@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import utilities.Driver;
 
-public class DetayliHastaArama_Page {
-           public DetayliHastaArama_Page(){
+public class DetailedPatientSearch_Page {
+           public DetailedPatientSearch_Page(){
             PageFactory.initElements(Driver.getDriver(),this);
         }
 
@@ -58,10 +58,10 @@ public class DetayliHastaArama_Page {
 
 
         public void confirmRegisteredPatient() {
-                String hastano = MuayeneKayit_Page.hastaNo;
+                String hastano = ServiceRegistration_Page.hastaNo;
                 hastaNoBox.sendKeys(hastano + Keys.ENTER);
                 queryButton.click();
-                String patientNameExpected = MuayeneKayit_Page.adi;
+                String patientNameExpected = ServiceRegistration_Page.adi;
                 String patientNameActual = patientNameSurname.getText();
                 Assert.assertTrue( patientNameActual.contains(patientNameExpected));
 

@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.asserts.Assertion;
 import pages.BasePage;
-import pages.HastaKayit_Page;
+import pages.PatientRegistration_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -21,10 +21,10 @@ import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class HastaKayit_StepDefinitions {
+public class PatientRegistration_StepDefinitions {
     BasePage basePage = new BasePage();
     Actions actions = new Actions(Driver.getDriver());
-    HastaKayit_Page hkp = new HastaKayit_Page();
+    PatientRegistration_Page hkp = new PatientRegistration_Page();
     Faker faker = new Faker();
 
 

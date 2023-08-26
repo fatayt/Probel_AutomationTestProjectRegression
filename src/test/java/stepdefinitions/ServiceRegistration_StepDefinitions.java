@@ -4,13 +4,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.BasePage;
-import pages.MuayeneKayit_Page;
+import pages.ServiceRegistration_Page;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class MuayeneKayit_StepDefinitions {
+public class ServiceRegistration_StepDefinitions {
 
-    MuayeneKayit_Page mkp = new MuayeneKayit_Page(Driver.getDriver());
+    ServiceRegistration_Page mkp = new ServiceRegistration_Page(Driver.getDriver());
     BasePage bp = new BasePage();
 
 

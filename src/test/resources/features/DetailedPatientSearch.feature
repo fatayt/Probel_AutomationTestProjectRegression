@@ -8,7 +8,7 @@ Feature:Detayli Hasta Arama
     And The user goes Hasta Islemleri, Ayaktan Hasta Islemleri and then click Poliklinik Muayene Kayit
     And The user clicks Detayli Hasta arama Button
 
-  @TC0052
+  @TC0058
   Scenario: Protokol No Sorgulama
     And The user enters ProtokolNO
     And The user clicks sorgulama button

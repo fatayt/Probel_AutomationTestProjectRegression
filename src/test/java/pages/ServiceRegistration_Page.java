@@ -442,6 +442,7 @@ public class ServiceRegistration_Page {
     String invalidTCID2 = ConfigReader.getProperty("invalidTCID2");
     String invalidTCIDWarningMessage = "Geçerli bir kimlik numarası giriniz.";
     String patientNo = ConfigReader.getProperty("PatientNo");
+    String patientNo2 = ConfigReader.getProperty("PatientNo2");
     String invalidPatientNo1 = ConfigReader.getProperty("invalidPatientNo1");
     String invalidPatientNo2 = ConfigReader.getProperty("invalidPatientNo2");
     String invalidPatientNoDWarningMessage2 = "Hasta No veya T.C. Kimlik No alanlarını doldurmadınız.";
@@ -1110,7 +1111,7 @@ public class ServiceRegistration_Page {
         tcIdNo_box.sendKeys(invalidTCID1);
     }
 
-    public void insertTheSecondTCIdentityNumberInTCIDBox() {
+    public void insertTheSecondInvalidTCIdentityNumberInTCIDBox() {
         tcIdNo_box.sendKeys(invalidTCID2);
     }
 
@@ -1241,5 +1242,20 @@ public class ServiceRegistration_Page {
             }
         } catch (NoSuchElementException e) {
         }
+    }
+
+    public void insertTheSecondTCIdentityNumberInTCIDBox() {
+        tcIdNo_box.sendKeys(tcID2);
+
+    }
+
+    public void assertThePatientsTCIDSecond() {
+        System.out.println("tcIdNo_box.getAttribute(value) = " + tcIdNo_box.getAttribute("value"));
+        Assert.assertEquals(tcIdNo_box.getAttribute("value"), tcID2);
+    }
+
+    public void insertTheSecondPatientNumberInPatientNumberBox() {
+        patientNumber_box.sendKeys(patientNo);
+
     }
 }

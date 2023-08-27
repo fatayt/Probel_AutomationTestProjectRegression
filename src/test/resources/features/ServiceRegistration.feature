@@ -1,21 +1,19 @@
 @ServiceExaminationRegistration
 @ServiceRegistration
-  @Deneme
 
-Feature: The Home Page of Patient Register
-
+Feature: The Home Page of Service Register
   Background:
     Given The user logs in
     And The user goes Hasta Islemleri, Ayaktan Hasta Islemleri and then click Poliklinik Muayene Kayit
 
   @TC0008 @Smoke
   Scenario: The user can display the registered patient
-    When insert the TC Identity Number in TC ID box
+    When insert the second TC Identity Number in TC ID box
     And press enter
     And check TC ID warning popup
-    And assert the patient's TC ID
+    And assert the patient's TC ID second
     And click on clean button
-    And insert the Patient Number in Patient number box
+    And insert the second Patient Number in Patient number box
     And press enter
     And check TC ID warning popup
     And assert the Patient number
@@ -27,7 +25,7 @@ Feature: The Home Page of Patient Register
     And assert the invalid TC ID number warning message
     And close the warning message
     And click on clean button
-    And insert the second TC Identity Number in TC ID box
+    And insert the second invalid TC Identity Number in TC ID box
     And press enter
     And assert the second TC Identity Number warning message
 
@@ -74,26 +72,27 @@ Feature: The Home Page of Patient Register
   Scenario: The user can clean the patient information page by click on “new" (Yeni) button
     When insert the TC Identity Number in TC ID box
     And press enter
+    And continue if
     And check TC ID warning popup
     And assert the patient's TC ID
     And click on new button
     Then assert the all page is clean
 
   @TC0027 @Bug
-  Scenario: The user can clean the patient information page by click on “delete" (Sil) button
+  Scenario: The user can clean the patient information page by click on “delete" button
     When insert the TC Identity Number in TC ID box
     And press enter
-    And click continue button
+    And continue if
     And check TC ID warning popup
     And assert the patient's TC ID
     And click on delete button
     Then assert the all page is clean
 
   @TC0029 @Bug
-  Scenario: The user can print the patient's information out by click on “print" (Yazdır) button
-    When insert the TC Identity Number in TC ID box
+  Scenario: The user can print the patient's information out by click on “print" button
+    When insert the second TC Identity Number in TC ID box
     And press enter
-    And click continue button
+    And continue if
     And assert the patient's TC ID
     And click on print button
     Then assert the popup for print out
@@ -110,6 +109,7 @@ Feature: The Home Page of Patient Register
     And close the warning message
     And insert the TC Identity Number in TC ID box
     And press enter
+    And continue if
     And check TC ID warning popup
     And click on Reports button
     And assert the warning message of reports button
@@ -117,6 +117,7 @@ Feature: The Home Page of Patient Register
     And click on clean button
     And insert the Patient Number in Patient number box
     And press enter
+    And continue if
     And check TC ID warning popup
     And click on Reports button
     And assert the warning message of reports button
@@ -124,6 +125,7 @@ Feature: The Home Page of Patient Register
     And click on clean button
     And click on query button
     And insert the protocol number in the protocol box
+    And continue if
     And press enter
     And click on Reports button
     Then assert the Report Transactions pop up
@@ -142,6 +144,7 @@ Feature: The Home Page of Patient Register
     And click on query button
     And insert the protocol number in the protocol box
     And press enter
+    And continue if
     And click on Health Council button
     Then assert the Health Council page
 
@@ -158,6 +161,7 @@ Feature: The Home Page of Patient Register
     And click on query button
     And insert the protocol number in the protocol box
     And press enter
+    And continue if
     And assert the patient's the protocol number
     And click on RIS button
     Then assert the RIS Acceptance Procedures page
@@ -170,6 +174,7 @@ Feature: The Home Page of Patient Register
     And click on query button
     And insert the protocol number in the protocol box
     And press enter
+    And continue if
     And assert the patient's the protocol number
     And click on Lab button
     Then assert the Lab. Pre-acceptance page
@@ -212,6 +217,7 @@ Feature: The Home Page of Patient Register
   Scenario: The user can change the service (Poliklinik)
     When insert the TC Identity Number in TC ID box
     And press enter
+    And continue if
     And check TC ID warning popup
     And scroll down
     And choose click the first of history of patient's service
@@ -224,7 +230,7 @@ Feature: The Home Page of Patient Register
   Scenario: The user can create the new service request
     When insert the TC Identity Number in TC ID box for service
     And press enter
-    And click continue button
+    And continue if
     And click the check box of HstTer
     And double click on service ID box
     And select service
@@ -242,6 +248,7 @@ Feature: The Home Page of Patient Register
     And click on clean button
     And insert the TC Identity Number in TC ID box for service
     And press enter
+    And continue if
     And assert record popup page
     And click continue button
     Then assert the new record in service's list
@@ -251,6 +258,7 @@ Feature: The Home Page of Patient Register
     When click on query button
     And insert the protocol number in the protocol box
     And press enter
+    And continue if
     Then assert the patient's the protocol number
     When double click in GSSIlk Takip box
     Then assert the GSS warning message
@@ -295,8 +303,8 @@ Feature: The Home Page of Patient Register
     And close the warning message
     And insert the TC Identity Number in TC ID box
     And press enter
-    And click continue button
-   # And check TC ID warning popup
+    And continue if
+    And check TC ID warning popup
     And click on foreign patient registration form button
     Then assert the foreign patient registration form page
     Then close the foreign patient registration form page
@@ -354,7 +362,7 @@ Feature: The Home Page of Patient Register
   Scenario: The user can check the details about patient record
     When insert the TC Identity Number in TC ID box
     And press enter
-    And click continue button
+    And continue if
     And scroll down
     And assert the all services that patient got
     And click on inspect button for first service
@@ -365,7 +373,7 @@ Feature: The Home Page of Patient Register
   Scenario: The user can delete or cancel the appointment
     When insert the TC Identity Number in TC ID box
     And press enter
-    And click continue button
+    And continue if
     And scroll down
     And assert the all services that patient got
     And click on inspect button for first service

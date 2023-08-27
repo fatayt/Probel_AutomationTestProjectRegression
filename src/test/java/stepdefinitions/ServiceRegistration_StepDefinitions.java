@@ -820,9 +820,9 @@ public class ServiceRegistration_StepDefinitions {
         mkp.insertTheInvalidTCIDNumberToTCIDBox();
     }
 
-    @And("insert the second TC Identity Number in TC ID box")
-    public void insertTheSecondTCIdentityNumberInTCIDBox() {
-        mkp.insertTheSecondTCIdentityNumberInTCIDBox();
+    @And("insert the second invalid TC Identity Number in TC ID box")
+    public void insertTheSecondInvalidTCIdentityNumberInTCIDBox() {
+        mkp.insertTheSecondInvalidTCIdentityNumberInTCIDBox();
     }
 
     @When("insert the invalid Patient Number number to patient number box")
@@ -966,6 +966,21 @@ public class ServiceRegistration_StepDefinitions {
     @And("continue if")
     public void continueIf() {
         mkp.continueIf();
+    }
+
+    @When("insert the second TC Identity Number in TC ID box")
+    public void insertTheSecondTCIdentityNumberInTCIDBox() {
+        mkp.insertTheSecondTCIdentityNumberInTCIDBox();
+    }
+
+    @And("assert the patient's TC ID second")
+    public void assertThePatientSTCIDSecond() {
+        mkp.assertThePatientsTCIDSecond();
+    }
+
+    @And("insert the second Patient Number in Patient number box")
+    public void insertTheSecondPatientNumberInPatientNumberBox() {
+        mkp.insertTheSecondPatientNumberInPatientNumberBox();
     }
 
     //@When("The user can click hasta button")

@@ -7,7 +7,7 @@ Feature: probel_hastaKayit
     And The user goes Hasta Islemleri, Ayaktan Hasta Islemleri and then click Poliklinik Muayene Kayit
     And Click the Hasta button
 
-  @TC0001
+  @TC0001 @Bug @Smoke
   Scenario: TC0001 - The user must not be able to enter a later date for your mother's date of birth
     Given Enter Kurum, Kurum detay
     And user selects the Uyruk
@@ -42,7 +42,7 @@ Feature: probel_hastaKayit
     And  user breaks down the popup to the TAMAM button
     Then user closes the application
 
-  @TC0002
+  @TC0002 @Bug
   Scenario: TC0002 - Received an error "Passport No/Id" when the user entered an incorrect "Tahsis No/Id"
     Given Enter Kurum, Kurum detay
     And user selects the Uyruk
@@ -67,7 +67,7 @@ Feature: probel_hastaKayit
     Then user closes the application
 
 
-  @TC0005
+  @TC0005 @Bug
   Scenario: TC0005 - Armutlu was chosen as the district of Izmir.
     Given Enter Kurum, Kurum detay
     And user selects the Uyruk
@@ -93,7 +93,7 @@ Feature: probel_hastaKayit
     And  user breaks down the popup to the TAMAM button
     Then user closes the application
 
-  @TC0006
+  @TC0006 @Bug
   Scenario: TC0006 - User can write their private names such as Mother Name, Father Name, Place of Birth in lower case
     Given Enter Kurum, Kurum detay
     When user selects the Uyruk
@@ -118,7 +118,7 @@ Feature: probel_hastaKayit
     And  user breaks down the popup to the TAMAM button
     Then user closes the application
 
-  @TC0007
+  @TC0007 @Bug @Smoke
   Scenario:TC0007 - The user can register in the Foreign patient type "Tourist's Health" option on the Home page
     Given Enter Kurum, Kurum detay
     And user selects the Uyruk
@@ -255,7 +255,7 @@ Feature: probel_hastaKayit
     And  user breaks down the popup to the TAMAM button
     Then user closes the application
 
-  @TC0048
+  @TC0048 @Bug
   Scenario:TC0048 - User registers with phone number in correct format
     Given Enter Kurum, Kurum detay
     And user selects the Uyruk AZERBEYCAN
@@ -293,7 +293,7 @@ Feature: probel_hastaKayit
     And  user breaks down the popup to the TAMAM button
     Then user closes the application
 
-  @TC0049
+  @TC0049 @Bug @Smoke
   Scenario:TC0049 - User registers with name and surname in the appropriate format
     Given Enter Kurum, Kurum detay
     And user selects the Uyruk AZERBEYCAN
@@ -320,7 +320,7 @@ Feature: probel_hastaKayit
     Then user closes the application
 
 
-  @TC0050
+  @TC0050 @Bug @Smoke
   Scenario:TC0050 - User registers with baba adı, anne adı and dogum yeri in the appropriate format
     Given Enter Kurum, Kurum detay
     And user selects the Uyruk AZERBEYCAN
@@ -911,7 +911,7 @@ Feature: probel_hastaKayit
     And Users clicks the query button
     Then User verifies that the patient is enrolled
 
-  @TC0093 @BUG
+  @TC0093 @Bug
   Scenario: TC0093 The pasport Number should be requested for the registiration of patients whose nationality is outside of Turkey
     Given User chooses the "nationality_2"
     And User clicks Patient Type box and Choose Button on dual citizens
@@ -1008,7 +1008,7 @@ Feature: probel_hastaKayit
     And User clicks the Save button
     Then User verifies that the message "birthWeekWarningMessage" is displayed
 
-  @TC0107 @BUG
+  @TC0107 @Bug
   Scenario: TC0107 The patient's date of birth cannot be later than today
     Given Enter Kurum, Kurum detay
     And User clicks Patient Type box and Choose Button on dual citizens
@@ -1033,7 +1033,7 @@ Feature: probel_hastaKayit
     And Users clicks the query button
     Then User verifies that the patient is not enrolled
 
-  @TC0108 @BUG
+  @TC0108 @Bug
   Scenario: TC0108 User cannot register a patient by ticked bluecardButton who is dual citizen
     Given Enter Kurum, Kurum detay
     And User clicks Patient Type box and Choose Button on dual citizens
@@ -1083,7 +1083,7 @@ Feature: probel_hastaKayit
     And User clicks the clean button
     Then Assert that the page is clear
 
-  @TC0115 @BUG
+  @TC0115 @Bug
   Scenario: TC0115 When "yenidoğan" is ticked The tab of "Doğum Sırası" should be at least 1 whose nationality is outside of Turkey
     Given Enter Kurum, Kurum detay
     And User clicks Patient Type box and Choose Button on dual citizens
@@ -1134,7 +1134,7 @@ Feature: probel_hastaKayit
     And Users clicks the query button
     Then User verifies that the patient is enrolled
 
-  @TC0124 @BUG
+  @TC0124 @Bug
   Scenario: TC0124 The pasport Number should be requested for the registiration of patients whose nationality is outside of Turkey
     Given User chooses the "nationality_2"
     And User clicks Patient Type box and Choose Button on Coming for Education and their obligations
@@ -1191,7 +1191,7 @@ Feature: probel_hastaKayit
     And User clicks yakinligi and chooses mother
     Then Assert that cardOwner searchBox is display
 
-  @TC0131 @BUG
+  @TC0131 @Bug
   Scenario: TC0131 The patient's date of birth cannot be later than today.
     Given Enter Kurum, Kurum detay
     And User clicks Patient Type box and Choose Button on Coming for Education and their obligations

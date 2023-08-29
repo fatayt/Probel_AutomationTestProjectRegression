@@ -1,10 +1,7 @@
 package pages;
 
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -19,7 +16,6 @@ import java.util.List;
 public class ServiceRegistration_Page {
     WebDriver driver;
     Actions actions = new Actions(Driver.getDriver());
-
 
     public ServiceRegistration_Page(WebDriver driver) {
         this.driver = driver;
@@ -45,7 +41,7 @@ public class ServiceRegistration_Page {
 
 
     @FindBy(id = "POLIKLINIK_KODU")
-    public WebElement poliklinik_box;
+    public WebElement serviceID_box;
 
 
     @FindBy(id = "GELIS_SEKLI_KODU")
@@ -62,8 +58,8 @@ public class ServiceRegistration_Page {
     public WebElement bilgilerKydedildi;
 
     public void selectValidPoliklinik() {
-        poliklinik_box.click();
-        poliklinik_box.sendKeys("1" + Keys.ENTER);
+        serviceID_box.click();
+        serviceID_box.sendKeys("1" + Keys.ENTER);
 
     }
 
@@ -74,9 +70,9 @@ public class ServiceRegistration_Page {
 
 
     public void selectPoliklinikAsKadinDogum() {
-        poliklinik_box.click();
+        serviceID_box.click();
         String kadinDogum = String.valueOf(ReusableMethods.getRandomNumberBetweenRange(149, 152));
-        poliklinik_box.sendKeys(kadinDogum + Keys.ENTER);
+        serviceID_box.sendKeys(kadinDogum + Keys.ENTER);
     }
 
 
@@ -103,8 +99,8 @@ public class ServiceRegistration_Page {
 
 
     public void emergencyAdult() {
-        poliklinik_box.click();
-        poliklinik_box.sendKeys("3" + Keys.ENTER);
+        serviceID_box.click();
+        serviceID_box.sendKeys("3" + Keys.ENTER);
     }
 
     public void failAlert() {
@@ -131,13 +127,13 @@ public class ServiceRegistration_Page {
     @FindBy(xpath = "//a[@title='Kaydet(F10)']")
     WebElement save_button;
 
-    @FindBy(xpath = "//a[@title='Yeni(F5)']")
+    @FindBy(xpath = "//a[.='Yeni']")
     WebElement new_button;
 
     @FindBy(xpath = "//a[@title='Sil(F8)']")
     WebElement delete_button;
 
-    @FindBy(xpath = "//a[@title='Temizle(F5)']")
+    @FindBy(xpath = "//a[.='Temizle']")
     WebElement clean_button;
 
     @FindBy(xpath = "//a[@class=' hem_button hem_yazdir']//span[1]")
@@ -148,6 +144,9 @@ public class ServiceRegistration_Page {
 
     @FindBy(xpath = "//div[@class='PopupTitle']")
     WebElement popUpPage_Title;
+
+    @FindBy(xpath = "//div[text()='Seçilen kayıt sayısı:0']")
+    WebElement popUpPageService_Title;
 
     @FindBy(linkText = "Raporlar")
     WebElement reports_button;
@@ -184,9 +183,6 @@ public class ServiceRegistration_Page {
 
     @FindBy(xpath = "//a[@class='PopupCloseButton PopupButton']")
     WebElement closePopupPage_button;
-
-    @FindBy(xpath = "(//input[@class='inpt tacnt wpx50'])[1]")
-    WebElement serviceID_box;
 
     @FindBy(xpath = "(//input[@class='inpt tacnt wpx50'])[2]")
     WebElement doctorID_box;
@@ -246,7 +242,7 @@ public class ServiceRegistration_Page {
     @FindBy(xpath = "//span[@title='pazartesi']")
     WebElement day_monday;
 
-    @FindBy(xpath = "//label[@data-target='pKabul']")
+    @FindBy(xpath = "//label[text()='Kabul Bilgileri']")
     WebElement acceptanceInformation_section;
 
     @FindBy(id = "KABUL_SEKLI_ID")
@@ -339,7 +335,7 @@ public class ServiceRegistration_Page {
     @FindBy(id = "IHTIYAC_DEGERLENDIRME")
     List<WebElement> ihtiyacDegerlendirme_dropDown_list;
 
-    @FindBy(xpath = "//a[@class='btnPolMuayeneDetayTanim   text_btn_border pBtn']")
+    @FindBy(linkText = "Kabul Bilgileri Tanımlamaları")
     WebElement acceptanceInformationDescribing_button;
     @FindBy(xpath = "(//label[@class=\"fb500\"])[13]")
     WebElement acceptanceInformationTitle;
@@ -347,7 +343,7 @@ public class ServiceRegistration_Page {
     @FindBy(xpath = "//a[@class='btnYabanciHastaKayit   text_btn_border pBtn']")
     WebElement foreignPatientRegistrationForm_button;
 
-    @FindBy(xpath = "//label[@data-target='pHesap']")
+    @FindBy(xpath = "//label[text()='Hesap']")
     WebElement account_section;
 
     @FindBy(xpath = "(//td[@class='dx-ellipsis'])[1]")
@@ -375,7 +371,7 @@ public class ServiceRegistration_Page {
     @FindBy(xpath = "//span[@class='warning item']")
     WebElement okeyWarningPopUp_button;
 
-    @FindBy(xpath = "(//a[@class='text_btn text_btn_bul backWhite btnGelisIncele'])[1]")
+    @FindBy(xpath = "(//td[@class='dxgv dx-ac']//a)[1]")
     WebElement inspectFirstService_button;
 
     @FindBy(id = "POLIKLINIK_ADI")
@@ -485,7 +481,8 @@ public class ServiceRegistration_Page {
     }
 
     public void clickClean() {
-        clean_button.click();
+        ReusableMethods.jseWithClick(Driver.getDriver(), clean_button);
+
     }
 
     public void insertPatientNo() {
@@ -525,7 +522,7 @@ public class ServiceRegistration_Page {
     }
 
     public void clickNewButton() {
-        new_button.click();
+        ReusableMethods.jseWithClick(Driver.getDriver(), new_button);
     }
 
     public void clickDeleteButton() {
@@ -533,7 +530,6 @@ public class ServiceRegistration_Page {
     }
 
     public void clickPrint() {
-
         ReusableMethods.jseWithClick(Driver.getDriver(), print_button);
         //print_button.click();
     }
@@ -589,7 +585,9 @@ public class ServiceRegistration_Page {
     }
 
     public void assertTheRISAcceptanceProceduresPage() {
+        ReusableMethods.waitForVisibility(popUpPage_Title, 4);
         String risPageTitle = "Ris Kabul İşlemleri";
+        System.out.println(popUpPage_Title.getText());
         Assert.assertEquals(popUpPage_Title.getText(), risPageTitle);
     }
 
@@ -603,16 +601,21 @@ public class ServiceRegistration_Page {
     }
 
     public void goToAcceptanceInformationSection() {
-        acceptanceInformation_section.click();
+        ReusableMethods.waitForVisibility(acceptanceInformation_section, 4);
+        ReusableMethods.jseWithClick(Driver.getDriver(), acceptanceInformation_section);
+        //acceptanceInformation_section.click();
     }
 
     public void asserAcceptanceInformationSection() {
+        ReusableMethods.waitForVisibility(acceptanceInformationTitle,3);
         System.out.println("acceptanceInformationTitle.getAttribute(\"textContent\") = " + acceptanceInformationTitle.getAttribute("textContent"));
         Assert.assertTrue(acceptanceInformationTitle.getAttribute("textContent").contains("Kabul Şekli"));
     }
 
     public void goToAccountSection() {
-        account_section.click();
+        ReusableMethods.waitForVisibility(account_section, 4);
+        ReusableMethods.jseWithClick(Driver.getDriver(), account_section);
+        //account_section.click();
     }
 
     public void asserAccountSection() {
@@ -621,7 +624,9 @@ public class ServiceRegistration_Page {
     }
 
     public void goToAdvancePaymentSection() {
-        advancePayment_section.click();
+        ReusableMethods.waitForVisibility(advancePayment_section, 4);
+        ReusableMethods.jseWithClick(Driver.getDriver(), advancePayment_section);
+        //advancePayment_section.click();
     }
 
     public void assertAdvancePaymentSection() {
@@ -647,7 +652,12 @@ public class ServiceRegistration_Page {
     }
 
     public void chooseClickTheFirstOfHistoryOfPatientSService() {
-        inspectFirstService_button.click();
+
+        //inspectFirstService_button.click();
+        // js.executeScript("arguments[0].scrollIntoView(true);", inspectFirstService_button);
+        ReusableMethods.waitFor(2);
+        ReusableMethods.jseWithClick(Driver.getDriver(), inspectFirstService_button);
+        //inspectFirstService_button.click();
     }
 
     public void assertTheServiceName() {
@@ -663,8 +673,10 @@ public class ServiceRegistration_Page {
     }
 
     public void assertTheServiceListPopupPage() {
+        ReusableMethods.waitForVisibility(popUpPageService_Title, 4);
         String serviceSListPopupPageTitle = "Seçilen kayıt sayısı:0";
-        Assert.assertEquals(popUpPage_Title.getText(), serviceSListPopupPageTitle);
+        System.out.println(popUpPageService_Title.getAttribute("textContent"));
+        Assert.assertEquals(popUpPageService_Title.getAttribute("textContent"), serviceSListPopupPageTitle);
     }
 
     public void clickTheCheckBoxOfHstTer() {
@@ -672,7 +684,7 @@ public class ServiceRegistration_Page {
     }
 
     public void doubleClickOnServiceIDBox() {
-        actions.doubleClick(serviceID_box).perform();
+        ReusableMethods.doubleClickWithJS(Driver.getDriver(),serviceID_box);
     }
 
     public void selectService() {
@@ -680,7 +692,8 @@ public class ServiceRegistration_Page {
     }
 
     public void doubleClickTheDoctorIDBox() {
-        actions.doubleClick(doctorID_box).perform();
+        ReusableMethods.doubleClickWithJS(Driver.getDriver(),doctorID_box);
+        //actions.doubleClick(doctorID_box).perform();
     }
 
     public void selectTheFirstDoctor() {
@@ -688,7 +701,8 @@ public class ServiceRegistration_Page {
     }
 
     public void doubleClickOnAssistantIDBox() {
-        actions.doubleClick(assistant_box).perform();
+        ReusableMethods.doubleClickWithJS(Driver.getDriver(),assistant_box);
+        //actions.doubleClick(assistant_box).perform();
     }
 
     public void selectTheFirstAssistant() {
@@ -696,7 +710,8 @@ public class ServiceRegistration_Page {
     }
 
     public void doubleClickCgrTipiNoBox() {
-        actions.doubleClick(cgrTipiNo_box).perform();
+        ReusableMethods.doubleClickWithJS(Driver.getDriver(),cgrTipiNo_box);
+        //actions.doubleClick(cgrTipiNo_box).perform();
     }
 
     public void selectTheControl() {
@@ -708,7 +723,8 @@ public class ServiceRegistration_Page {
     }
 
     public void clickSaveButton() {
-        save_button.click();
+        ReusableMethods.jseWithClick(Driver.getDriver(),save_button);
+        //save_button.click();
     }
 
     public void assertRecordPopupPage() {
@@ -723,7 +739,7 @@ public class ServiceRegistration_Page {
 
     public void clickContinueButton() {
         try {
-            if(continue_button.isDisplayed()) {
+            if (continue_button.isDisplayed()) {
                 continue_button.click();
             }
         } catch (NoSuchElementException e) {
@@ -845,11 +861,13 @@ public class ServiceRegistration_Page {
     }
 
     public void clickOnAcceptanceInformationDescribingButton() {
-        acceptanceInformationDescribing_button.click();
+       ReusableMethods.jseWithClick(Driver.getDriver(),acceptanceInformationDescribing_button);
+        //acceptanceInformationDescribing_button.click();
     }
 
     public void assertTheDetailsDescribingPage() {
         String detailsDescribingPage_title = "Detay Tanımları";
+        System.out.println(popUpPage_Title.getText());
         Assert.assertEquals(popUpPage_Title.getText(), detailsDescribingPage_title);
     }
 
@@ -858,7 +876,8 @@ public class ServiceRegistration_Page {
     }
 
     public void clickOnForeignPatientRegistrationFormButton() {
-        foreignPatientRegistrationForm_button.click();
+        ReusableMethods.jseWithClick(Driver.getDriver(),foreignPatientRegistrationForm_button);
+        //foreignPatientRegistrationForm_button.click();
     }
 
     public void assertTheForeignPatientRegistrationFormPage() {
@@ -878,7 +897,7 @@ public class ServiceRegistration_Page {
 
     public void checkTCIDWarningPopup() {
         try {
-            if(closeWarningPopUp_button.isDisplayed()) {
+            if (closeWarningPopUp_button.isDisplayed()) {
                 closePopupPage_button.click();
             }
         } catch (NoSuchElementException e) {
@@ -1086,7 +1105,9 @@ public class ServiceRegistration_Page {
     }
 
     public void clickOnInspectButtonForFirstService() {
-        inspectFirstService_button.click();
+        ReusableMethods.waitForVisibility(inspectFirstService_button,3);
+        ReusableMethods.jseWithClick(Driver.getDriver(),inspectFirstService_button);
+        //inspectFirstService_button.click();
     }
 
     public void clickOnServicesButton() {
@@ -1215,7 +1236,18 @@ public class ServiceRegistration_Page {
     }
 
     public void scrollDown() {
-        actions.scrollByAmount(0, 80).perform();
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        // actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+
+        js.executeScript("window.scrollBy(0,350)", "");
+
+        //        actions.scrollByAmount(0,-550);
+//        js.executeScript("javascript:window.scrollBy(250, 350)");
+
+        //js.executeScript("scroll(0, -250);");
+
+        // js.executeScript("javascript:window.scrollBy(250, 350)");
     }
 
     public void clickOnServiceSettingsButton() {
@@ -1237,7 +1269,7 @@ public class ServiceRegistration_Page {
 
     public void continueIf() {
         try {
-            if(continue_button.isDisplayed()) {
+            if (continue_button.isDisplayed()) {
                 continue_button.click();
             }
         } catch (NoSuchElementException e) {

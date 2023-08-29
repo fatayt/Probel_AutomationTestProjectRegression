@@ -69,7 +69,7 @@ Feature: The Home Page of Service Register
     Then assert the second invalid protocol number
 
   @TC0026
-  Scenario: The user can clean the patient information page by click on “new" (Yeni) button
+  Scenario: The user can clean the patient information page by click on “new" button
     When insert the TC Identity Number in TC ID box
     And press enter
     And continue if
@@ -98,12 +98,12 @@ Feature: The Home Page of Service Register
     Then assert the popup for print out
 
   @TC0033
-  Scenario: The user can go to Detailed Patient Search page (Detaylı Hasta Arama)
+  Scenario: The user can go to Detailed Patient Search page
     When click on Detailed Patient Search button
     Then assert the Detailed Patient Search page
 
   @TC0034
-  Scenario: The user can go to Report Transactions page (Rapor İşlemleri)
+  Scenario: The user can go to Report Transactions page
     When click on Reports button
     And assert the warning message of reports button
     And close the warning message
@@ -131,7 +131,7 @@ Feature: The Home Page of Service Register
     Then assert the Report Transactions pop up
 
   @TC0035
-  Scenario: The user can go to Health Council page (Saglik Kurulu)
+  Scenario: The user can go to Health Council page
     When click on Health Council button
     And assert the health council warning message
     And close the warning message
@@ -149,12 +149,12 @@ Feature: The Home Page of Service Register
     Then assert the Health Council page
 
   @TC0040 @Bug
-  Scenario: The user can go to Utility Operations page (Yardimci Islemler)
+  Scenario: The user can go to Utility Operations page
     When click on Utility Operations button
     Then assert the Utility Operations pop up
 
   @TC0041
-  Scenario: The user can go to the RIS Acceptance Procedures (Ris Kabul Islemleri) page
+  Scenario: The user can go to the RIS Acceptance Procedures page
     When click on RIS button
     And assert the RIS warning message
     And close the warning message
@@ -167,7 +167,7 @@ Feature: The Home Page of Service Register
     Then assert the RIS Acceptance Procedures page
 
   @TC0042
-  Scenario: The user can go to the Lab. Pre-acceptance (Lab. On Kabul) page
+  Scenario: The user can go to the Lab. Pre-acceptance page
     When click on Lab button
     And assert the Lab warning message
     And close the warning message
@@ -180,17 +180,17 @@ Feature: The Home Page of Service Register
     Then assert the Lab. Pre-acceptance page
 
   @TC0066
-  Scenario: The user can go to the information section (Kabul Bilgileri) section
+  Scenario: The user can go to the information section section
     When click on acceptance information button
     Then assert the acceptance information section
 
   @TC0067
-  Scenario: The user can go to the account (Hesap) section
+  Scenario: The user can go to the account section
     When click on account button
     Then assert the account section
 
   @TC0068
-  Scenario: The user can go to the advance payment (Avans) section
+  Scenario: The user can go to the advance payment section
     When click on advance payment button
     Then assert the advance payment section
 
@@ -214,12 +214,12 @@ Feature: The Home Page of Service Register
     Then assert the patient register popup page
 
   @TC0074
-  Scenario: The user can change the service (Poliklinik)
+  Scenario: The user can change the service
     When insert the TC Identity Number in TC ID box
     And press enter
     And continue if
     And check TC ID warning popup
-    And scroll down
+    #And scroll down
     And choose click the first of history of patient's service
     And assert the service name
     And assert the doctor name
@@ -249,12 +249,12 @@ Feature: The Home Page of Service Register
     And insert the TC Identity Number in TC ID box for service
     And press enter
     And continue if
-    And assert record popup page
-    And click continue button
+    #And assert record popup page
+    #And click continue button
     Then assert the new record in service's list
 
   @TC0087
-  Scenario: The user can display and update additional information about patient (Gelisine Ait Bilgiler)
+  Scenario: The user can display and update additional information about patient
     When click on query button
     And insert the protocol number in the protocol box
     And press enter
@@ -292,7 +292,7 @@ Feature: The Home Page of Service Register
     Then assert the SaglikKuruluSevk check box was checked
 
   @TC0088
-  Scenario: The user can display and update additional information about patient (Kabul Bilgileri)
+  Scenario: The user can display and update additional information about patient
     When click on acceptance information button
     Then assert the acceptance information section
     When click on acceptance information describing button

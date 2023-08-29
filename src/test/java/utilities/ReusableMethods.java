@@ -24,6 +24,7 @@ import java.util.regex.Pattern;
 public class ReusableMethods {
     static String kimlikNo;
 
+
     public static String getScreenshot(String name) throws IOException {
 //
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -286,10 +287,19 @@ public class ReusableMethods {
     public static void jseWithClick(WebDriver driver,WebElement element){
 
         JavascriptExecutor jse =(JavascriptExecutor)driver;
-
         jse.executeScript("arguments[0].click();",element);
 
     }
+
+    public static void doubleClickWithJS(WebDriver driver,WebElement element) {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].dispatchEvent(new MouseEvent('dblclick', { bubbles: true }));", element);
+    }
+
+    public static void scrollPageDownWithJS(WebDriver driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,25)", ""); }
+
 }
 
 

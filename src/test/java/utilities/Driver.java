@@ -17,13 +17,14 @@ public class Driver {
             switch (ConfigReader.getProperty("browser")){
 
                 case "chrome":
-
-
-
                     driver = new ChromeDriver();
                     break;
+                    case "headlesschrome":
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--headless=new");
+                    driver = new ChromeDriver(options);
+                    break;
                 case "firefox":
-
                     driver =new FirefoxDriver();
                     break;
                 case "edge":

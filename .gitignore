@@ -38,5 +38,5 @@ build/
 ### Mac OS ###
 .DS_Store
 
-/test-output/
-/target/
+#/test-output/
+#/target/

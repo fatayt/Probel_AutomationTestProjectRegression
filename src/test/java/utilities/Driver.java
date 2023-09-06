@@ -17,17 +17,12 @@ public class Driver {
             switch (ConfigReader.getProperty("browser")){
 
                 case "chrome":
-
-
-
                     driver = new ChromeDriver();
                     break;
                 case "firefox":
-
                     driver =new FirefoxDriver();
                     break;
                 case "edge":
-
                     driver = new EdgeDriver();
                     break;
                     //case "chrome":

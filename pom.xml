@@ -76,11 +76,31 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
+                <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <runOrder>Alphabetical</runOrder>
+                    <skipTests>false</skipTests>
+                    <includes>
+                        <include>**/runner/*Runners.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <parallel>classes</parallel>
+                    <forkCount>1</forkCount>
+                    <reuseForks>true</reuseForks>
+                    <threadCount>4</threadCount>
+                    <reuseForks>false</reuseForks>
+                    <argLine>-Duser.language=en</argLine>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <useFile>false</useFile>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <!-- <runOrder>Alphabetical</runOrder> -->
                     <includes>
                         <include>**/Runner*.java</include>
                         <include>**/*FailedTestRunner.java</include>
@@ -108,7 +128,34 @@
                     <strictCucumber6Behavior>true</strictCucumber6Behavior>
                 </configuration>
             </plugin>
-                 <plugin>
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>5.7.5</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>Cucumber-HTML-Report</projectName>
+                            <outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
+                            <inputDirectory>${project.build.directory}/</inputDirectory>
+                            <jsonFiles>
+                                <param>**/*.json</param>
+                            </jsonFiles>
+                            <classificationFiles>
+                                <param>sample.properties</param>
+                                <param>other.properties</param>
+                            </classificationFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version> <!-- Bu satırı değiştirin -->

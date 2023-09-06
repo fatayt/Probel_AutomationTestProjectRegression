@@ -8,7 +8,7 @@
     <artifactId>Probel_Kayit</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <properties>
+     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -72,7 +72,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -109,7 +108,7 @@
                     <strictCucumber6Behavior>true</strictCucumber6Behavior>
                 </configuration>
             </plugin>
-            <plugin>
+                 <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version> <!-- Bu satırı değiştirin -->
@@ -119,7 +118,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>

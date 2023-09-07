@@ -1,6 +1,6 @@
 @ServiceExaminationRegistration
 @PatientRegistration
-
+@Regression
 Feature: probel_hastaKayit
   Background:
     Given The user logs in

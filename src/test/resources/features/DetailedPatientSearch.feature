@@ -1,6 +1,6 @@
 @ServiceExaminationRegistration
 @DetailedPatientSearch
-@Deneme
+@Regression
 
 Feature:Detayli Hasta Arama
   Background:

@@ -1,6 +1,6 @@
 @ServiceExaminationRegistration
 @ServiceRegistration
-
+@Regression
 Feature: The Home Page of Service Register
   Background:
     Given The user logs in
